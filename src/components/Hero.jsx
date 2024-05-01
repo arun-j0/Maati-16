@@ -25,7 +25,8 @@ const HeroSection = () => {
       {/* Content */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative p-8 m-2 text-center bg-gray-300 top-12 md:top-24 md:w-2/3 lg:w-1/2 rounded-3xl bg-opacity-20 backdrop-blur-sm ">
-          <h1 className="mb-8 text-2xl font-bold text-transparent sm:text-4xl md:text-6xl bg-gradient-to-r bg-clip-text from-yellow-500 via-orange-500 to-amber-500 animate-text">MAATI-16: Empowering Dreams</h1>
+        <h1 className="mb-8 text-2xl font-bold text-transparent transition duration-150 sm:text-4xl md:text-6xl bg-gradient-to-r bg-clip-text from-yellow-500 via-orange-500 to-amber-500 animate-text">MAATI-16: Empowering Dreams</h1>
+
           <p className="mb-8 text-sm font-semibold text-transparent text-white sm:text-lg md:text-2xl">
             MAATI-16 is dedicated to providing education, mentorship, and resources to underprivileged children, empowering them to realize their dreams and create a better future. Our mission is to break the cycle of poverty through education and holistic support.
           </p>

@@ -79,15 +79,13 @@ const Navbar = () => {
                 <FaInfoCircle className="mr-1" /> About Us <FaAngleDown className="ml-1" />
               </button>
               {isAboutOpen && (
-                <div className="absolute left-0 z-10 p-4 mt-2 bg-gray-800 rounded-lg top-full">
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <a href="/personal-details" className="flex items-center text-white hover:text-[#991b1b] link link-underline link-underline-black"><FaUserPlus className="mr-2" /> Personal Details</a>
-                    <a href="/core-members" className="flex items-center text-white hover:text-[#991b1b] link link-underline link-underline-black"><FaUserPlus className="mr-2" /> Core Members</a>
-                    <a href="/motto-and-objective" className="flex items-center text-white hover:text-[#991b1b] link link-underline link-underline-black"><FaUserPlus className="mr-2" /> Our Motto and Objective</a>
-                    <a href="/faqs-policies" className="flex items-center text-white hover:text-[#991b1b] link link-underline link-underline-black"><FaUserPlus className="mr-2" /> FAQs and Policies</a>
-                  </div>
-                </div>
-              )}
+              <div className="absolute z-10 w-64 p-4 mt-2 bg-gray-800 rounded-lg top-full opacity-80">
+                <a href="/personal-details" className="flex items-center text-white hover:text-[#991b1b] link link-underline link-underline-black"><FaUserPlus className="mr-2" /> Personal Details</a>
+                <a href="/core-members" className="flex items-center text-white hover:text-[#991b1b] link link-underline link-underline-black"><FaUserPlus className="mr-2" /> Core Members</a>
+                <a href="/motto-and-objective" className="flex items-center text-white hover:text-[#991b1b] link link-underline link-underline-black"><FaUserPlus className="mr-2" /> Our Motto and Objective</a>
+                <a href="/faqs-policies" className="flex items-center text-white hover:text-[#991b1b] link link-underline link-underline-black"><FaUserPlus className="mr-2" /> FAQs and Policies</a>
+              </div>
+            )}
             </div>
             <div className="relative group" onMouseEnter={handleCareersMouseEnter} onMouseLeave={handleCareersMouseLeave}>
               <button onClick={toggleCareersMenu} className="flex items-center hover:text-gray-300">
