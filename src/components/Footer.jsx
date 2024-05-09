@@ -26,8 +26,8 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <h3 className="mb-2 text-lg font-bold">Contact Us</h3>
-            <p className="text-[#fee57e]">123 Street, City</p>
+            <h3 className="pl-2 mb-2 text-lg font-bold">Contact Us</h3>
+            <p className="text-[#fee57e] ">123 Street, City</p>
             <p className="text-[#fee57e]">contact@example.com</p>
             <p className="text-[#fee57e]">123-456-7890</p>
           </div>
