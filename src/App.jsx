@@ -1,10 +1,10 @@
-import HeroSection from "./components/Hero";
+import HomePage from "./pages/HomePage";
+
 
 export default function App() {
   return (
     <>
-      <HeroSection/>
-      
+      <HomePage/>
     </>
   )
 }
