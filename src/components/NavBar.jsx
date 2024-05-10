@@ -5,9 +5,20 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [showForm, setShowForm] = useState(false); // State to track whether to show the form or not
+
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    const toggleForm = () => {
+        setShowForm(!showForm);
+    };
+
+    const handleFormClose = () => {
+        setShowForm(false);
+    };
+
     return (
         <nav className="bg-[#280101] text-[#fee57e]">
             <div className="container px-4 mx-auto">
@@ -45,7 +56,7 @@ const Navbar = () => {
                                                 <RiBriefcaseLine /> <span>Careers</span> <FaChevronDown className="ml-1" />
                                             </a>
                                             <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
-                                                <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Membership/Volunteership Form</a>
+                                                <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleForm}>Membership/Volunteership Form</a>
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Careers</a>
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Internships</a>
                                             </div>
@@ -98,7 +109,7 @@ const Navbar = () => {
                                     <RiBriefcaseLine /> <span>Careers</span> <FaChevronDown className="ml-1" />
                                 </a>
                                 <div className="absolute left-0 py-2 mt-2 transition-opacity duration-300 bg-[#280101]  rounded-md shadow-lg opacity-0 w-72 top-full group-hover:opacity-100 border-[#fee57e] border-2">
-                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Membership/Volunteership Form</a>
+                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleForm}>Membership/Volunteership Form</a>
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Careers</a>
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Internships</a>
                                 </div>
@@ -127,6 +138,120 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+            {/* Form Modal */}
+            {showForm && (
+                <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+                    <div className="bg-white p-8 rounded-md shadow-lg">
+                        <h2 className="text-xl font-semibold mb-4">Membership/Volunteership Form</h2>
+                        <form>
+                            <div className="mb-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                                    Name
+                                </label>
+                                <input
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="name"
+                                    type="text"
+                                    placeholder="Enter your name"
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="dob">
+                                    Date of Birth
+                                </label>
+                                <input
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="dob"
+                                    type="date"
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact">
+                                    Contact Number
+                                </label>
+                                <input
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="contact"
+                                    type="tel"
+                                    placeholder="Enter your contact number"
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="address">
+                                    Address
+                                </label>
+                                <textarea
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="address"
+                                    rows="3"
+                                    placeholder="Enter your address"
+                                ></textarea>
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="aadhar">
+                                    Aadhar Number
+                                </label>
+                                <input
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="aadhar"
+                                    type="text"
+                                    placeholder="Enter your Aadhar number"
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="whatsapp">
+                                    Whatsapp Number
+                                </label>
+                                <input
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="whatsapp"
+                                    type="tel"
+                                    placeholder="Enter your Whatsapp number"
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                                    Email Address
+                                </label>
+                                <input
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="email"
+                                    type="email"
+                                    placeholder="Enter your email address"
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="declaration">
+                                    I hereby, declare that being the member of MAATI-16 will abide by all the rules and regulations and always follow the ethical code of conduct. (Acceptance Required)
+                                </label>
+                                <input
+                                    className="mr-2 leading-tight"
+                                    id="declaration"
+                                    type="checkbox"
+                                />
+                                <label className="text-sm text-gray-700" htmlFor="declaration">
+                                    I agree to the terms and conditions
+                                </label>
+                            </div>
+                            <div className="flex items-center justify-between">
+                                <button
+                                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    type="button"
+                                    onClick={handleFormClose}
+                                >
+                                    Close
+                                </button>
+                                <button
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    type="button"
+                                >
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };
