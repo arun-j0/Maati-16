@@ -141,11 +141,11 @@ const Navbar = () => {
             {/* Form Modal */}
             {showForm && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-                    <div className="bg-white p-8 rounded-md shadow-lg w-96"> {/* Modified width */}
+                    <div className="bg-[#280101] p-8 rounded-md shadow-lg w-80 text-white"> {/* Modified width and color */}
                         <h2 className="text-xl font-semibold mb-4">Membership/Volunteership Form</h2>
                         <form>
                             <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                                <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="name">
                                     Name
                                 </label>
                                 <input
@@ -156,7 +156,7 @@ const Navbar = () => {
                                 />
                             </div>
                             <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="dob">
+                                <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="dob">
                                     Date of Birth
                                 </label>
                                 <input
@@ -166,7 +166,7 @@ const Navbar = () => {
                                 />
                             </div>
                             <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact">
+                                <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="contact">
                                     Contact Number
                                 </label>
                                 <input
@@ -177,7 +177,7 @@ const Navbar = () => {
                                 />
                             </div>
                             <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="address">
+                                <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="address">
                                     Address
                                 </label>
                                 <textarea
@@ -188,7 +188,7 @@ const Navbar = () => {
                                 ></textarea>
                             </div>
                             <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="aadhar">
+                                <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="aadhar">
                                     Aadhar Number
                                 </label>
                                 <input
@@ -199,7 +199,7 @@ const Navbar = () => {
                                 />
                             </div>
                             <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="whatsapp">
+                                <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="whatsapp">
                                     Whatsapp Number
                                 </label>
                                 <input
@@ -210,7 +210,7 @@ const Navbar = () => {
                                 />
                             </div>
                             <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                                <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="email">
                                     Email Address
                                 </label>
                                 <input
@@ -221,7 +221,7 @@ const Navbar = () => {
                                 />
                             </div>
                             <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="declaration">
+                                <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="declaration">
                                     I hereby, declare that being the member of MAATI-16 will abide by all the rules and regulations and always follow the ethical code of conduct. (Acceptance Required)
                                 </label>
                                 <input
@@ -229,7 +229,7 @@ const Navbar = () => {
                                     id="declaration"
                                     type="checkbox"
                                 />
-                                <label className="text-sm text-gray-700" htmlFor="declaration">
+                                <label className="text-sm text-gray-300" htmlFor="declaration">
                                     I agree to the terms and conditions
                                 </label>
                             </div>
@@ -242,7 +242,7 @@ const Navbar = () => {
                                     Close
                                 </button>
                                 <button
-                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    className="bg-[#fee57e] hover:bg-yellow-400 text-[#280101] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                     type="submit"
                                 >
                                     Submit
