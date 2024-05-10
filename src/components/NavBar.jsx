@@ -5,9 +5,16 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [showForm, setShowForm] = useState(false); // State to track whether to show the form or not
+
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    const toggleForm = () => {
+        setShowForm(!showForm);
+    };
+
     return (
         <nav className="bg-[#280101] text-[#fee57e]">
             <div className="container px-4 mx-auto">
@@ -45,7 +52,7 @@ const Navbar = () => {
                                                 <RiBriefcaseLine /> <span>Careers</span> <FaChevronDown className="ml-1" />
                                             </a>
                                             <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
-                                                <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Membership/Volunteership Form</a>
+                                                <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleForm}>Membership/Volunteership Form</a>
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Careers</a>
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Internships</a>
                                             </div>
@@ -98,7 +105,7 @@ const Navbar = () => {
                                     <RiBriefcaseLine /> <span>Careers</span> <FaChevronDown className="ml-1" />
                                 </a>
                                 <div className="absolute left-0 py-2 mt-2 transition-opacity duration-300 bg-[#280101]  rounded-md shadow-lg opacity-0 w-72 top-full group-hover:opacity-100 border-[#fee57e] border-2">
-                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Membership/Volunteership Form</a>
+                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleForm}>Membership/Volunteership Form</a>
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Careers</a>
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Internships</a>
                                 </div>
@@ -127,6 +134,18 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+            {/* Form Modal */}
+            {showForm && (
+                <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+                    <div className="bg-white p-8 rounded-md shadow-lg">
+                        <h2 className="text-xl font-semibold mb-4">Membership/Volunteership Form</h2>
+                        {/* Your form components go here */}
+                        <button onClick={toggleForm} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };
