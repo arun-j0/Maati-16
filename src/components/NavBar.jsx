@@ -15,6 +15,10 @@ const Navbar = () => {
         setShowForm(!showForm);
     };
 
+    const handleFormClose = () => {
+        setShowForm(false);
+    };
+
     return (
         <nav className="bg-[#280101] text-[#fee57e]">
             <div className="container px-4 mx-auto">
@@ -139,10 +143,12 @@ const Navbar = () => {
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <div className="bg-white p-8 rounded-md shadow-lg">
                         <h2 className="text-xl font-semibold mb-4">Membership/Volunteership Form</h2>
-                        {/* Your form components go here */}
-                        <button onClick={toggleForm} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-                            Close
-                        </button>
+                        <form>
+                            {/* Form fields */}
+                            <button onClick={handleFormClose} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                                Close
+                            </button>
+                        </form>
                     </div>
                 </div>
             )}
