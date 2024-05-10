@@ -5,16 +5,9 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [showForm, setShowForm] = useState(false); // State to track whether to show the form or not
-
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-
-    const toggleForm = () => {
-        setShowForm(!showForm);
-    };
-
     return (
         <nav className="bg-[#280101] text-[#fee57e]">
             <div className="container px-4 mx-auto">
@@ -52,7 +45,7 @@ const Navbar = () => {
                                                 <RiBriefcaseLine /> <span>Careers</span> <FaChevronDown className="ml-1" />
                                             </a>
                                             <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
-                                                <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleForm}>Membership/Volunteership Form</a>
+                                                <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Membership/Volunteership Form</a>
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Careers</a>
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Internships</a>
                                             </div>
@@ -101,4 +94,41 @@ const Navbar = () => {
                                 </div>
                             </li>
                             <li className="relative group">
-                                <a href="#" className="flex text-xl items-center space-x-2 text-[#fee
+                                <a href="#" className="flex text-xl items-center space-x-2 text-[#fee57e] hover:text-gray-300">
+                                    <RiBriefcaseLine /> <span>Careers</span> <FaChevronDown className="ml-1" />
+                                </a>
+                                <div className="absolute left-0 py-2 mt-2 transition-opacity duration-300 bg-[#280101]  rounded-md shadow-lg opacity-0 w-72 top-full group-hover:opacity-100 border-[#fee57e] border-2">
+                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Membership/Volunteership Form</a>
+                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Careers</a>
+                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Internships</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" className="flex text-xl items-center space-x-2 text-[#fee57e] hover:text-gray-300">
+                                    <RiGalleryLine /> <span>Gallery</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" className="flex text-xl items-center space-x-2 text-[#fee57e] hover:text-gray-300">
+                                    <RiCalendar2Line /> <span>Our Works</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" className="flex text-xl items-center space-x-2 text-[#fee57e] hover:text-gray-300">
+                                    <RiArticleLine /> <span>Blog</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" className="flex text-xl items-center space-x-2 text-[#fee57e] hover:text-gray-300">
+                                    <RiContactsLine /> <span>Contact Us</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    );
+};
+
+export default Navbar;
