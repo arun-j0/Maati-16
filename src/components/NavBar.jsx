@@ -177,7 +177,26 @@ const Navbar = () => {
                                 <strong>How old is Maati 16 Trust?</strong>
                                 <p>Maati 16 was established in the year 2016.</p>
                             </li>
-                            {/* Add other FAQs */}
+                            <li>
+                                <strong>Which Areas does Maati 16 Trust works in?</strong>
+                                <p>Maati 16 has been working in the thematic areas of education, health care, youth employability and empowerment of women and girls. Education is our priority.</p>
+                            </li>
+                            <li>
+                                <strong>How to become a Volunteer in Maati 16 Trust?</strong>
+                                <p>You need to fill the Membership/Volunteer form of Maati 16. It will take 24 – 48 hours to verify and then you receive an approval email.</p>
+                            </li>
+                            <li>
+                                <strong>How can I donate to Maati 16 Trust?</strong>
+                                <p>You can go to “Donate Now” section of Maati 16 Trust’s Website and donate online. For other donations related queries you can please write to maati16officail@gmail.com</p>
+                            </li>
+                            <li>
+                                <strong>What is project Gyan Sagar?</strong>
+                                <p>Our primary focus is child education. In this project we help the needy children who want to study and make their future bright. We want to reduce the illiteracy rate of India...</p>
+                            </li>
+                            <li>
+                                <strong>How can I work for Maati 16?</strong>
+                                <p>Please go to our “Career” page to know more about the current openings.</p>
+                            </li>
                         </ol>
                         <button
                             className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
