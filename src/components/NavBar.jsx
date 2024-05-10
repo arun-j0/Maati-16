@@ -6,7 +6,6 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showForm, setShowForm] = useState(false); // State to track whether to show the form or not
-    const [showFAQs, setShowFAQs] = useState(false); // State to track whether to show FAQs or not
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -18,10 +17,6 @@ const Navbar = () => {
 
     const handleFormClose = () => {
         setShowForm(false);
-    };
-
-    const toggleFAQs = () => {
-        setShowFAQs(!showFAQs);
     };
 
     return (
@@ -52,7 +47,8 @@ const Navbar = () => {
                                             <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Personal Details</a>
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Core Members</a>
-                                                <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleFAQs}>FAQs and Policies</a>
+                                                <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Our Motto and Objective</a>
+                                                <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">FAQs and Policies</a>
                                             </div>
                                         </li>
                                         <li className="relative group">
@@ -104,7 +100,8 @@ const Navbar = () => {
                                 <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Personal Details</a>
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Core Members</a>
-                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleFAQs}>FAQs and Policies</a>
+                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Our Motto and Objective</a>
+                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">FAQs and Policies</a>
                                 </div>
                             </li>
                             <li className="relative group">
@@ -158,52 +155,100 @@ const Navbar = () => {
                                     placeholder="Enter your name"
                                 />
                             </div>
-                            {/* Other form fields */}
+                            <div className="mb-4">
+                                <label className="block text-[#fee57e] text-sm font-bold mb-2" htmlFor="dob">
+                                    Date of Birth
+                                </label>
+                                <input
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-[#fee57e] leading-tight focus:outline-none focus:shadow-outline bg-[#42220d]"
+                                    id="dob"
+                                    type="date"
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-[#fee57e] text-sm font-bold mb-2" htmlFor="contact">
+                                    Contact Number
+                                </label>
+                                <input
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-[#fee57e] leading-tight focus:outline-none focus:shadow-outline bg-[#42220d]"
+                                    id="contact"
+                                    type="tel"
+                                    placeholder="Enter your contact number"
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-[#fee57e] text-sm font-bold mb-2" htmlFor="address">
+                                    Address
+                                </label>
+                                <textarea
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-[#fee57e] leading-tight focus:outline-none focus:shadow-outline bg-[#42220d]"
+                                    id="address"
+                                    rows="3"
+                                    placeholder="Enter your address"
+                                ></textarea>
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-[#fee57e] text-sm font-bold mb-2" htmlFor="aadhar">
+                                    Aadhar Number
+                                </label>
+                                <input
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-[#fee57e] leading-tight focus:outline-none focus:shadow-outline bg-[#42220d]"
+                                    id="aadhar"
+                                    type="text"
+                                    placeholder="Enter your Aadhar number"
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-[#fee57e] text-sm font-bold mb-2" htmlFor="whatsapp">
+                                    Whatsapp Number
+                                </label>
+                                <input
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-[#fee57e] leading-tight focus:outline-none focus:shadow-outline bg-[#42220d]"
+                                    id="whatsapp"
+                                    type="tel"
+                                    placeholder="Enter your Whatsapp number"
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-[#fee57e] text-sm font-bold mb-2" htmlFor="email">
+                                    Email Address
+                                </label>
+                                <input
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-[#fee57e] leading-tight focus:outline-none focus:shadow-outline bg-[#42220d]"
+                                    id="email"
+                                    type="email"
+                                    placeholder="Enter your email address"
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-[#fee57e] text-sm font-bold mb-2" htmlFor="declaration">
+                                    I hereby, declare that being the member of MAATI-16 will abide by all the rules and regulations and always follow the ethical code of conduct. (Acceptance Required)
+                                </label>
+                                <input
+                                    className="mr-2 leading-tight"
+                                    id="declaration"
+                                    type="checkbox"
+                                />
+                                <label className="text-sm text-[#fee57e]" htmlFor="declaration">
+                                    I agree to the terms and conditions
+                                </label>
+                            </div>
+                            <div className="flex items-center justify-between">
+                                <button
+                                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    type="button"
+                                    onClick={handleFormClose}
+                                >
+                                    Close
+                                </button>
+                                <button
+                                    className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    type="button"
+                                >
+                                    Submit
+                                </button>
+                            </div>
                         </form>
-                    </div>
-                </div>
-            )}
-            {/* FAQs Modal */}
-            {showFAQs && (
-                <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-                    <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
-                        <h2 className="text-xl font-semibold mb-4">FAQs - Maati 16 Trust</h2>
-                        <ol className="list-decimal">
-                            <li>
-                                <strong>What is the mission of Maati 16 Trust?</strong>
-                                <p>Maati 16 is an organization dedicated to providing education and reducing the illiteracy rate...</p>
-                            </li>
-                            <li>
-                                <strong>How old is Maati 16 Trust?</strong>
-                                <p>Maati 16 was established in the year 2016.</p>
-                            </li>
-                            <li>
-                                <strong>Which Areas does Maati 16 Trust works in?</strong>
-                                <p>Maati 16 has been working in the thematic areas of education, health care, youth employability and empowerment of women and girls. Education is our priority.</p>
-                            </li>
-                            <li>
-                                <strong>How to become a Volunteer in Maati 16 Trust?</strong>
-                                <p>You need to fill the Membership/Volunteer form of Maati 16. It will take 24 – 48 hours to verify and then you receive an approval email.</p>
-                            </li>
-                            <li>
-                                <strong>How can I donate to Maati 16 Trust?</strong>
-                                <p>You can go to “Donate Now” section of Maati 16 Trust’s Website and donate online. For other donations related queries you can please write to maati16officail@gmail.com</p>
-                            </li>
-                            <li>
-                                <strong>What is project Gyan Sagar?</strong>
-                                <p>Our primary focus is child education. In this project we help the needy children who want to study and make their future bright. We want to reduce the illiteracy rate of India...</p>
-                            </li>
-                            <li>
-                                <strong>How can I work for Maati 16?</strong>
-                                <p>Please go to our “Career” page to know more about the current openings.</p>
-                            </li>
-                        </ol>
-                        <button
-                            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
-                            onClick={toggleFAQs}
-                        >
-                            Close FAQs
-                        </button>
                     </div>
                 </div>
             )}
