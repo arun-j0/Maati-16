@@ -87,7 +87,7 @@ const Navbar = () => {
                         )}
                     </div>
                     {/* Menu - Desktop */}
-                    <div className="hidden w-full md:flex md:items-center md:justify-center md:space-x-4">  {/* Modified class for right alignment */}
+                    <div className="hidden w-full md:flex md:items-center md:justify-center md:space-x-4">
                         <ul className="flex space-x-4">
                             <li>
                                 <a href="#" className="flex items-center space-x-2 text-xl text-[#fee57e] text-center hover:text-gray-300">  <RiHome4Line /> <span>Home</span>
@@ -141,7 +141,7 @@ const Navbar = () => {
             {/* Form Modal */}
             {showForm && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-                    <div className="bg-white p-8 rounded-md shadow-lg">
+                    <div className="bg-white p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto">
                         <h2 className="text-xl font-semibold mb-4">Membership/Volunteership Form</h2>
                         <form>
                             <div className="mb-4">
