@@ -141,7 +141,7 @@ const Navbar = () => {
             {/* Form Modal */}
             {showForm && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-                    <div className="bg-white p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto">
+                    <div className="form-container p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto">
                         <h2 className="text-xl font-semibold mb-4">Membership/Volunteership Form</h2>
                         <form>
                             <div className="mb-4">
