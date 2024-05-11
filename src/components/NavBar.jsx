@@ -103,7 +103,7 @@ const Navbar = () => {
                                 <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Personal Details</a>
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Core Members</a>
-                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Our Motto and Objective</a>
+                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Our Motto and Objective</a>
     
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleFAQs}>FAQs and Policies</a>
                                 </div>
