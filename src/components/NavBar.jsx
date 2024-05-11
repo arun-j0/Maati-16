@@ -305,23 +305,39 @@ const Navbar = () => {
                 </div>
             )}
          {showPersonalDetails && (
-                <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-                    <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
-                        <h2 className="text-3xl font-bold text-[#fee57e] mb-4">Personal Details</h2>
-                        {/* Personal details content */}
-                        <button onClick={togglePersonalDetails} className="absolute top-4 right-4 text-[#fee57e]">
-                            <FaTimes className="w-6 h-6" />
-                        </button>
-                        <div className="text-[#fee57e]">
-                            <p>Founder – Hemanshu Dubey</p>
-                            <p>Contact Number / WhatsApp – +91 9870112134</p>
-                            <p>Registered Address – Plot D-5, Block D, Om Vihar, Phase – V, Near West Point School, New Delhi. Zip Code – 110059</p>
-                            <p>Instagram – <a href="https://www.instagram.com/maati16._?igsh=MWt1Y2Y3cThzem5xaQ==" className="text-[#fee57e] hover:text-[#fee57e]">maati16</a></p>
-                            <p>Linkedin – <a href="https://www.linkedin.com/in/hemanshu-dubey-7257092b5" className="text-[#fee57e] hover:text-[#fee57e]">Hemanshu Dubey</a></p>
-                        </div>
-                    </div>
+    <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+        <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
+            <h2 className="text-3xl font-bold text-[#fee57e] mb-4">Personal Details</h2>
+            {/* Personal details content */}
+            <button onClick={togglePersonalDetails} className="absolute top-4 right-4 text-[#fee57e]">
+                <FaTimes className="w-6 h-6" />
+            </button>
+            <div className="text-[#fee57e] space-y-4">
+                <div className="flex items-start justify-between">
+                    <p className="text-lg font-semibold">Founder</p>
+                    <p className="text-lg">Hemanshu Dubey</p>
                 </div>
-            )}
+                <div className="flex items-start justify-between">
+                    <p className="text-lg font-semibold">Contact Number / WhatsApp</p>
+                    <p className="text-lg">+91 9870112134</p>
+                </div>
+                <div className="flex items-start justify-between">
+                    <p className="text-lg font-semibold">Registered Address</p>
+                    <p className="text-lg">Plot D-5, Block D, Om Vihar, Phase – V, Near West Point School, New Delhi. Zip Code – 110059</p>
+                </div>
+                <div className="flex items-start justify-between">
+                    <p className="text-lg font-semibold">Instagram</p>
+                    <p className="text-lg"><a href="https://www.instagram.com/maati16._?igsh=MWt1Y2Y3cThzem5xaQ==" className="text-[#fee57e] hover:text-[#fee57e]">maati16</a></p>
+                </div>
+                <div className="flex items-start justify-between">
+                    <p className="text-lg font-semibold">Linkedin</p>
+                    <p className="text-lg"><a href="https://www.linkedin.com/in/hemanshu-dubey-7257092b5" className="text-[#fee57e] hover:text-[#fee57e]">Hemanshu Dubey</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+)}
+
         </nav>
     );
 };
