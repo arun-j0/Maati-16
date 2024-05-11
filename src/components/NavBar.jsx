@@ -7,6 +7,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showForm, setShowForm] = useState(false); 
     const [showFAQs, setShowFAQs] = useState(false); 
+    const [showPersonalDetails, setShowPersonalDetails] = useState(false);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -22,6 +23,10 @@ const Navbar = () => {
 
     const toggleFAQs = () => {
         setShowFAQs(!showFAQs);
+    };
+
+    const togglePersonalDetails = () => {
+        setShowPersonalDetails(!showPersonalDetails);
     };
 
     return (
