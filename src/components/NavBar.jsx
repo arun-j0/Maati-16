@@ -298,6 +298,13 @@ const Navbar = () => {
                     </div>
                 </div>
             )}
+             <div className="personal-details">
+                <p>Founder – Hemanshu Dubey</p>
+                <p>Contact Number / WhatsApp – +91 9870112134</p>
+                <p>Registered Address – Plot D-5, Block D, Om Vihar, Phase – V, Near West Point School, New Delhi. Zip Code – 110059</p>
+                <p>Instagram – <a href="https://www.instagram.com/maati16._?igsh=MWt1Y2Y3cThzem5xaQ==" target="_blank" rel="noopener noreferrer">maati16._</a></p>
+                <p>Linkedin – <a href="https://www.linkedin.com/in/hemanshu-dubey-7257092b5" target="_blank" rel="noopener noreferrer">Hemanshu Dubey</a></p>
+            </div>
         </nav>
     );
 };
