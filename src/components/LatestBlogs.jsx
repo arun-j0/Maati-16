@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const blogs = [
   {
@@ -46,6 +47,13 @@ const blogs = [
   },
 ];
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
+
 const BlogSection = () => {
   return (
     <section className="py-12 bg-[#280101] border-b-4 border-[#fee57e] border-8">
@@ -70,7 +78,7 @@ const BlogSection = () => {
           ))}
         </div>
         <div className="mt-8 text-center">
-          <a href="/blogs" className="bg-[#fee57e] text-[#280101] px-6 py-3 rounded-md hover:bg-yellow-600 transition duration-300">More Blogs</a>
+          <Link to="/blogs" onClick={scrollToTop} className="bg-[#fee57e] text-[#280101] px-6 py-3 rounded-md hover:bg-yellow-600 transition duration-300">More Blogs</Link>
         </div>
       </div>
     </section>

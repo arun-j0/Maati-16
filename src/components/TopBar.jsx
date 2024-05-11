@@ -11,16 +11,16 @@ const Topbar = () => {
         </div>
 
         <div className="flex items-center pr-2">
-          <a href="#" className="mr-4 text-[#280101] hover:text-white">
+          <a href="#" className="mr-4 text-[#280101] hover:text-[#fee57e]">
             <FaFacebook className="w-6 h-6 fill-current" />
           </a>
-          <a href="#" className="mr-4 text-[#280101] hover:text-white">
+          <a href="#" className="mr-4 text-[#280101] hover:text-[#fee57e]">
             <FaInstagram className="w-6 h-6 fill-current" />
           </a>
-          <a href="#" className="mr-4 text-[#280101] hover:text-white">
+          <a href="#" className="mr-4 text-[#280101] hover:text-[#fee57e]">
             <FaTwitter className="w-6 h-6 fill-current" />
           </a>
-          <a href="#" className="text-[#280101] hover:text-white">
+          <a href="#" className="text-[#280101] hover:text-[#fee57e]">
             <FaLinkedin className="w-6 h-6 fill-current" />
           </a>
         </div>
