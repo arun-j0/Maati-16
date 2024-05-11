@@ -260,17 +260,7 @@ const Navbar = () => {
                     </div>
                 </div>
             )}
-             {showPersonalDetails && (
-                                                    <div className="px-4 py-2 text-gray-300">
-                                                        <p className="text-lg font-bold">Personal Details</p>
-                                                        <p>Founder – Hemanshu Dubey</p>
-                                                        <p>Contact Number / WhatsApp – +91 9870112134</p>
-                                                        <p>Registered Address – Plot D-5, Block D, Om Vihar, Phase – V, Near West Point School, New Delhi. Zip Code – 110059</p>
-                                                        <p>Instagram – <a href="https://www.instagram.com/maati16._?igsh=MWt1Y2Y3cThzem5xaQ==" target="_blank" rel="noopener noreferrer" className="text-blue-500">maati16._</a></p>
-                                                        <p>Linkedin – <a href="https://www.linkedin.com/in/hemanshu-dubey-7257092b5" target="_blank" rel="noopener noreferrer" className="text-blue-500">Hemanshu Dubey</a></p>
-                                                    </div>
-                                                )}
-                                            </div>
+        
             {showFAQs && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
