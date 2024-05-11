@@ -304,7 +304,7 @@ const Navbar = () => {
                     </div>
                 </div>
             )}
-          {showPersonalDetails && (
+         {showPersonalDetails && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
                         <h2 className="text-3xl font-bold text-[#fee57e] mb-4">Personal Details</h2>
@@ -312,12 +312,13 @@ const Navbar = () => {
                         <button onClick={togglePersonalDetails} className="absolute top-4 right-4 text-[#fee57e]">
                             <FaTimes className="w-6 h-6" />
                         </button>
-                        <p>Founder – Hemanshu Dubey 
-Contact Number / WhatsApp – +91 9870112134
-Registered Address – Plot D-5, Block D, Om Vihar, Phase – V, Near West Point School, New Delhi.  Zip Code – 110059
-Instagram – https://www.instagram.com/maati16._?igsh=MWt1Y2Y3cThzem5xaQ==
-Linkedin – https://www.linkedin.com/in/hemanshu-dubey-7257092b5
-</p>
+                        <div className="text-[#fee57e]">
+                            <p>Founder – Hemanshu Dubey</p>
+                            <p>Contact Number / WhatsApp – +91 9870112134</p>
+                            <p>Registered Address – Plot D-5, Block D, Om Vihar, Phase – V, Near West Point School, New Delhi. Zip Code – 110059</p>
+                            <p>Instagram – <a href="https://www.instagram.com/maati16._?igsh=MWt1Y2Y3cThzem5xaQ==" className="text-[#fee57e] hover:text-[#fee57e]">maati16</a></p>
+                            <p>Linkedin – <a href="https://www.linkedin.com/in/hemanshu-dubey-7257092b5" className="text-[#fee57e] hover:text-[#fee57e]">Hemanshu Dubey</a></p>
+                        </div>
                     </div>
                 </div>
             )}
