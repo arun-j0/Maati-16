@@ -305,25 +305,17 @@ const Navbar = () => {
                     </div>
                 </div>
             )}
-           {showPersonalDetails && (
+          {showPersonalDetails && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
                         <h2 className="text-3xl font-bold text-[#fee57e] mb-4">Personal Details</h2>
-                        <div className="text-[#fee57e] mb-4">
-                            <p className="mb-2"><span className="font-bold">Founder:</span> Hemanshu Dubey</p>
-                            <p className="mb-2"><span className="font-bold">Contact Number / WhatsApp:</span> +91 9870112134</p>
-                            <p className="mb-2"><span className="font-bold">Registered Address:</span> Plot D-5, Block D, Om Vihar, Phase – V, Near West Point School, New Delhi. Zip Code – 110059</p>
-                            <p className="mb-2"><span className="font-bold">Instagram:</span> <a href="https://www.instagram.com/maati16._?igsh=MWt1Y2Y3cThzem5xaQ==" className="text-[#fee57e] hover:underline">maati16._</a></p>
-                            <p className="mb-2"><span className="font-bold">Linkedin:</span> <a href="https://www.linkedin.com/in/hemanshu-dubey-7257092b5" className="text-[#fee57e] hover:underline">Hemanshu Dubey</a></p>
-                        </div>
-                        <button
-                            className="mt-4 bg-[#fee57e] hover:bg-[#e09528] text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                            onClick={togglePersonalDetails}
-                        >
-                            Close
+                        {/* Personal details content */}
+                        <button onClick={togglePersonalDetails} className="absolute top-4 right-4 text-[#fee57e]">
+                            <FaTimes className="w-6 h-6" />
                         </button>
+                        <p>Personal details go here...</p>
                     </div>
-                     </div>
+                </div>
             )}
         </nav>
     );
