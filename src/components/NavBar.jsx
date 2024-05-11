@@ -304,10 +304,12 @@ const Navbar = () => {
                     </div>
                 </div>
             )}
-        {showPersonalDetails && (
+       {showPersonalDetails && (
     <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
         <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
-            <h2 className="text-3xl font-bold text-[#fee57e] mb-4">Personal Details</h2>
+            <h2 className="text-3xl font-bold text-[#fee57e] mb-4 border-b border-[#fee57e] pb-2">
+                <u>Personal Details</u>
+            </h2>
             {/* Personal details content */}
             <button onClick={togglePersonalDetails} className="absolute top-4 right-4 text-[#fee57e]">
                 <FaTimes className="w-6 h-6" />
