@@ -245,7 +245,7 @@ const Navbar = () => {
                                     Close
                                 </button>
                                 <button
-                                    className="bg-[#fee57e] hover:bg-yellow-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    className="bg-[#fee57e] hover:bg-[#e09528] text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                     type="submit"
                                 >
                                     Submit
@@ -259,48 +259,38 @@ const Navbar = () => {
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
                         <h2 className="text-xl font-semibold mb-4">FAQs and Policies</h2>
-                        <div className="space-y-4">
-                            <div className="border-b border-[#fee57e] pb-4">
-                                <h3 className="text-2xl font-bold text-[#ffc64a]">FAQ 1</h3>
-                                <p className="text-sm">Answer 1</p>
+                        <dl>
+                            <div className="mb-4">
+                                <dt className="text-2xl font-bold mb-2 text-[#fee57e]">What is the mission of Maati 16 Trust?</dt>
+                                <dd className="text-[#fee57e] mb-4">Maati 16 is an organization dedicated to providing education and reducing the illiteracy rate. The mission of Maati 16 is to empower individuals through education, with a focus on reducing the illiteracy rate in India. We strive to provide accessible and quality education to underserved populations, including children, adults, and marginalized communities. Through innovative programs and partnerships, we aim to equip individuals with the knowledge, skills, and opportunities they need to thrive in today's world. By addressing the root causes of illiteracy and promoting lifelong learning, we envision a future where every person has the chance to reach their full potential and contribute positively to society.</dd>
                             </div>
-                            <div className="border-b border-[#fee57e] pb-4">
-                                <h3 className="text-2xl font-bold text-[#ffc64a]">FAQ 2</h3>
-                                <p className="text-sm">Answer 2</p>
+                            <div className="mb-4">
+                                <dt className="text-2xl font-bold mb-2 text-[#fee57e]">How old is Maati 16 Trust?</dt>
+                                <dd className="text-[#fee57e] mb-4">Maati 16 was established in the year 2016.</dd>
                             </div>
-                            <div className="border-b border-[#fee57e] pb-4">
-                                <h3 className="text-2xl font-bold text-[#ffc64a]">FAQ 3</h3>
-                                <p className="text-sm">Answer 3</p>
+                            <div className="mb-4">
+                                <dt className="text-2xl font-bold mb-2 text-[#fee57e]">Which Areas does Maati 16 Trust works in?</dt>
+                                <dd className="text-[#fee57e] mb-4">Maati 16 has been working in the thematic areas of education, health care, youth employability and empowerment of women and girls. Education is our priority.</dd>
                             </div>
-                            <div className="border-b border-[#fee57e] pb-4">
-                                <h3 className="text-2xl font-bold text-[#ffc64a]">FAQ 4</h3>
-                                <p className="text-sm">Answer 4</p>
+                            <div className="mb-4">
+                                <dt className="text-2xl font-bold mb-2 text-[#fee57e]">How to become a Volunteer in Maati 16 Trust?</dt>
+                                <dd className="text-[#fee57e] mb-4">You need to fill the Membership/Volunteer form of Maati 16. It will take 24 – 48 hours to verify and then you receive an approval email.</dd>
                             </div>
-                            <div className="border-b border-[#fee57e] pb-4">
-                                <h3 className="text-2xl font-bold text-[#ffc64a]">FAQ 5</h3>
-                                <p className="text-sm">Answer 5</p>
+                            <div className="mb-4">
+                                <dt className="text-2xl font-bold mb-2 text-[#fee57e]">How can I donate to Maati 16 Trust?</dt>
+                                <dd className="text-[#fee57e] mb-4">You can go to “Donate Now” section of Maati 16 Trust’s Website and donate online. For other donations related queries you can please write to maati16officail@gmail.com</dd>
                             </div>
-                            <div className="border-b border-[#fee57e] pb-4">
-                                <h3 className="text-2xl font-bold text-[#ffc64a]">FAQ 6</h3>
-                                <p className="text-sm">Answer 6</p>
+                            <div className="mb-4">
+                                <dt className="text-2xl font-bold mb-2 text-[#fee57e]">What is project Gyan Sagar?</dt>
+                                <dd className="text-[#fee57e] mb-4">Our primary focus is child education. In this project we help the needy children who want to study and make their future bright. We want to reduce the illiteracy rate of India. We are working in Bihar and Delhi. We want to cover all states of India. We also help the orphanages and provide study and stationary materials to them, we are connected with 10 – 15 Orphanages till date. This number will increase soon.</dd>
                             </div>
-                            <div className="border-b border-[#fee57e] pb-4">
-                                <h3 className="text-2xl font-bold text-[#ffc64a]">FAQ 7</h3>
-                                <p className="text-sm text-[#fee57e]">What are the registration details of Maati 16 Trust? <br/>Ans – The registration details of Maati 16 Trust are as follows:</p>
-                                <ul className="list-disc pl-8">
-                                    <li className="text-sm">Name: Maati 16 Trust</li>
-                                    <li className="text-sm">Registration Number: 123456789</li>
-                                    <li className="text-sm">Date of Registration: 01/01/2020</li>
-                                    <li className="text-sm">Registered Address: 123, Street Name, City, Country</li>
-                                </ul>
+                            <div className="mb-4">
+                                <dt className="text-2xl font-bold mb-2 text-[#fee57e]">How can I work form Maati 16?</dt>
+                                <dd className="text-[#fee57e]">Please go to our “Carrer” page to know more about the current openings.</dd>
                             </div>
-                            <div className="border-b border-[#fee57e] pb-4">
-                                <h3 className="text-2xl font-bold text-[#ffc64a]">FAQ 8</h3>
-                                <p className="text-sm">Answer 8</p>
-                            </div>
-                        </div>
+                        </dl>
                         <button
-                            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="mt-4 bg-[#fee57e] hover:bg-[#e09528] text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             onClick={toggleFAQs}
                         >
                             Close
