@@ -55,14 +55,14 @@ const Navbar = () => {
                                             </a>
                                             <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
                                     
-                                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleFAQs}>Personal Details</a>
+                                                <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={togglePersonalDetails}>Personal Details</a>
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Core Members</a>
                                                 <a href="#" className="block px-4 py-2 text-2xl text-left text-gray-300 hover:text-white">Our Motto and Objective</a>
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleFAQs}>FAQs and Policies</a>
                                             </div>
                                         </li>
                                         <li className="relative group">
-                                            <a href="#" className="flex items-center space-x-2 text-[#fee57e] hover:text-gray-300">
+                                            <a href="#" className="flex items-center text-xl space-x-2 text-[#fee57e] hover:text-gray-300">
                                                 <RiBriefcaseLine /> <span>Careers</span> <FaChevronDown className="ml-1" />
                                             </a>
                                             <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
@@ -107,10 +107,9 @@ const Navbar = () => {
                                     <RiUserLine /> <span>About Us</span> <FaChevronDown className="ml-1" />
                                 </a>
                                 <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
-                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleFAQs}>Personal Details</a>
+                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={togglePersonalDetails}>Personal Details</a>
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Core Members</a>
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Our Motto and Objective</a>
-    
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleFAQs}>FAQs and Policies</a>
                                 </div>
                             </li>
