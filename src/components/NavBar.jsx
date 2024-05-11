@@ -312,7 +312,12 @@ const Navbar = () => {
                         <button onClick={togglePersonalDetails} className="absolute top-4 right-4 text-[#fee57e]">
                             <FaTimes className="w-6 h-6" />
                         </button>
-                        <p>Personal details go here...</p>
+                        <p>Founder – Hemanshu Dubey 
+Contact Number / WhatsApp – +91 9870112134
+Registered Address – Plot D-5, Block D, Om Vihar, Phase – V, Near West Point School, New Delhi.  Zip Code – 110059
+Instagram – https://www.instagram.com/maati16._?igsh=MWt1Y2Y3cThzem5xaQ==
+Linkedin – https://www.linkedin.com/in/hemanshu-dubey-7257092b5
+</p>
                     </div>
                 </div>
             )}
