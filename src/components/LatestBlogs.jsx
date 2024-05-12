@@ -58,7 +58,7 @@ const BlogSection = () => {
   return (
     <section className="py-12 bg-[#280101] border-b-4 border-[#fee57e] border-8">
       <div className="container mx-auto">
-        <h2 className="text-6xl md:text-8xl font-bold text-center text-[#fee57e] mb-8">Latest Blogs</h2>
+        <h2 className="text-4xl md:text-6xl font-bold text-center text-[#fee57e] mb-8">Latest Blogs</h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {blogs.map((blog, index) => (
             <motion.div 
@@ -67,8 +67,8 @@ const BlogSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <h3 className="text-3xl md:text-6xl font-bold text-[#280101] mb-2">{blog.title}</h3>
-              <p className="mb-4 text-lg text-gray-600 md:text-2xl">{blog.content}</p>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#280101] mb-2">{blog.title}</h3>
+              <p className="mb-4 text-lg text-gray-600 md:text-xl">{blog.content}</p>
               <div className="flex items-center justify-between text-sm text-gray-500">
                 <span>By {blog.author}</span>
                 <span>{blog.date}</span>

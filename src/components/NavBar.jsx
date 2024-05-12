@@ -3,12 +3,18 @@ import { RiHome4Line, RiUserLine, RiBriefcaseLine, RiGalleryLine, RiCalendar2Lin
 import { FaChevronDown, FaTimes } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const [showPersonalDetails, setShowPersonalDetails] = useState(false);
     const [showFAQs, setShowFAQs] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
+    const [aboutUsDropdown, setAboutUsDropdown] = useState(false);
+    const [careersDropdown, setCareersDropdown] = useState(false);
+
+    let aboutUsTimer;
+    let careersTimer;
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -30,18 +36,35 @@ const Navbar = () => {
         setShowForm(false);
     };
 
+    const handleAboutUsHover = () => {
+        setAboutUsDropdown(true);
+        clearTimeout(aboutUsTimer);
+    };
+
+    const handleAboutUsLeave = () => {
+        aboutUsTimer = setTimeout(() => {
+            setAboutUsDropdown(false);
+        }, 500);
+    };
+
+    const handleCareersHover = () => {
+        setCareersDropdown(true);
+        clearTimeout(careersTimer);
+    };
+
+    const handleCareersLeave = () => {
+        careersTimer = setTimeout(() => {
+            setCareersDropdown(false);
+        }, 500);
+    };
+
+    const handleScroll = () => {
+        const offset = window.scrollY;
+        setIsSticky(offset > 0);
+    };
+
     useEffect(() => {
-        const handleScroll = () => {
-            const offset = window.scrollY;
-            if (offset > 0) {
-                setIsSticky(true);
-            } else {
-                setIsSticky(false);
-            }
-        };
-
         window.addEventListener('scroll', handleScroll);
-
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -64,48 +87,60 @@ const Navbar = () => {
                                     </button>
                                     <ul className="flex flex-col items-center space-y-6">
                                         <li>
-                                            <Link to="/" className="flex items-center space-x-2 text-[#fee57e] text-4xl hover:text-[#fee57e]">
+                                            <Link to="/" className="flex items-center space-x-2 text-[#fee57e] text-2xl hover:text-[#fee57e]">
                                                 <RiHome4Line /> <span>Home</span>
                                             </Link>
                                         </li>
                                         <li className="relative group">
-                                            <a href="#" className="flex items-center space-x-2  text-[#fee57e] text-4xl hover:text-[#fee57e]">
+                                            <div
+                                                onMouseEnter={handleAboutUsHover}
+                                                onMouseLeave={handleAboutUsLeave}
+                                                className="flex items-center space-x-2  text-[#fee57e] text-2xl hover:text-[#fee57e]"
+                                            >
                                                 <RiUserLine /> <span>About Us</span> <FaChevronDown className="ml-1 text-[#fee57e] hover:text-[#fee57e]" />
-                                            </a>
-                                            <div className="absolute left-0 w-[19rem] py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2 z-10">
-                                                <a href="#" className="block px-4 py-2 text-2xl text-left text-gray-300 hover:text-white">Personal Details</a>
-                                                <a href="#" className="block px-4 py-2 text-2xl text-left text-gray-300 hover:text-white">Core Members</a>
-                                                <a href="#" className="block px-4 py-2 text-2xl text-left text-gray-300 hover:text-white">Our Motto and Objective</a>
-                                                <a href="#" className="block px-4 py-2 text-2xl text-left text-gray-300 hover:text-white">FAQs and Policies</a>
                                             </div>
+                                            {aboutUsDropdown && (
+                                                <div onMouseEnter={handleAboutUsHover} onMouseLeave={handleAboutUsLeave} className="absolute left-0 w-[19rem] py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2 z-10">
+                                                    <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Personal Details</a>
+                                                    <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Core Members</a>
+                                                    <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Our Motto and Objective</a>
+                                                    <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">FAQs and Policies</a>
+                                                </div>
+                                            )}
                                         </li>
                                         <li className="relative group">
-                                            <a href="#" className="flex items-center text-4xl space-x-2 text-[#fee57e] hover:text-[#fee57e]">
+                                            <div
+                                                onMouseEnter={handleCareersHover}
+                                                onMouseLeave={handleCareersLeave}
+                                                className="flex items-center text-2xl space-x-2 text-[#fee57e] hover:text-[#fee57e]"
+                                            >
                                                 <RiBriefcaseLine /> <span>Careers</span> <FaChevronDown className="ml-1" />
-                                            </a>
-                                            <div className="absolute left-0 w-[25rem] py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2 z-10">
-                                                <a href="#" className="block px-4 py-2 text-2xl text-left text-gray-300 hover:text-white" onClick={toggleForm}>Membership/Volunteership Form</a>
-                                                <a href="#" className="block px-4 py-2 text-2xl text-left text-gray-300 hover:text-white">Careers</a>
-                                                <a href="#" className="block px-4 py-2 text-2xl text-left text-gray-300 hover:text-white">Internships</a>
                                             </div>
+                                            {careersDropdown && (
+                                                <div onMouseEnter={handleCareersHover} onMouseLeave={handleCareersLeave} className="absolute left-0 w-[25rem] py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2 z-10">
+                                                    <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white" onClick={toggleForm}>Membership/Volunteership Form</a>
+                                                    <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Careers</a>
+                                                    <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Internships</a>
+                                                </div>
+                                            )}
                                         </li>
                                         <li>
-                                            <a href="#" className="flex text-4xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
+                                            <a href="#" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
                                                 <RiGalleryLine /> <span>Gallery</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" className="flex text-4xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
+                                            <a href="#" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
                                                 <RiCalendar2Line /> <span>Our Works</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <Link to="/blogs" className="flex text-4xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
+                                            <Link to="/blogs" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
                                                 <RiArticleLine /> <span>Blog</span>
                                             </Link>
                                         </li>
                                         <li>
-                                            <a href="#" className="flex text-4xl items-center space-x-2 text-[#fee57e] hover:ttext-[#fee57e]">
+                                            <a href="#" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:ttext-[#fee57e]">
                                                 <RiContactsLine /> <span>Contact Us</span>
                                             </a>
                                         </li>
@@ -118,47 +153,59 @@ const Navbar = () => {
                     <div className="hidden w-full md:flex md:items-center md:justify-center md:space-x-5">
                         <ul className="flex space-x-4">
                             <li>
-                                <Link to="/" className="flex items-center space-x-2 text-xl text-[#280101] text-center hover:text-[#fee57e]">  <RiHome4Line size={30}/> <span className='text-3xl'>Home</span>
+                                <Link to="/" className="flex items-center space-x-2 text-xl text-amber-900 text-center hover:text-[#280101]">  <RiHome4Line size={30}/> <span className='text-3xl'>Home</span>
                                 </Link>
                             </li>
                             <li className="relative group">
-                                <a href="#" className="flex items-center text-xl space-x-2 text-[#280101] hover:text-[#fee57e]">
+                                <div
+                                    onMouseEnter={handleAboutUsHover}
+                                    onMouseLeave={handleAboutUsLeave}
+                                    className="flex items-center text-xl space-x-2 text-amber-900 hover:text-[#280101]"
+                                >
                                     <RiUserLine size={30} /> <span className='text-3xl'>About Us</span> <FaChevronDown className="ml-1" />
-                                </a>
-                                <div className="absolute left-0 w-60 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
-                                    <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Personal Details</a>
-                                    <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Core Members</a>
-                                    <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Our Motto and Objective</a>
-                                    <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">FAQs and Policies</a>
                                 </div>
+                                {aboutUsDropdown && (
+                                    <div onMouseEnter={handleAboutUsHover} onMouseLeave={handleAboutUsLeave} className="absolute left-0 w-60 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2">
+                                        <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Personal Details</a>
+                                        <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Core Members</a>
+                                        <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Our Motto and Objective</a>
+                                        <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">FAQs and Policies</a>
+                                    </div>
+                                )}
                             </li>
                             <li className="relative group">
-                                <a href="#" className="flex text-xl items-center space-x-2 text-[#280101] hover:text-[#fee57e]">
+                                <div
+                                    onMouseEnter={handleCareersHover}
+                                    onMouseLeave={handleCareersLeave}
+                                    className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]"
+                                >
                                     <RiBriefcaseLine size={30} /> <span className='text-3xl'>Careers</span> <FaChevronDown className="ml-1" />
-                                </a>
-                                <div className="absolute left-0 py-2 mt-2 transition-opacity duration-300 bg-[#280101]  rounded-md shadow-lg opacity-0 w-[25rem] top-full group-hover:opacity-100 border-[#fee57e] border-2">
-                                    <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white" onClick={toggleForm}>Membership/Volunteership Form</a>
-                                    <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Careers</a>
-                                    <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Internships</a>
                                 </div>
+                                {careersDropdown && (
+                                    <div onMouseEnter={handleCareersHover} onMouseLeave={handleCareersLeave} className="absolute left-0 py-2 mt-2 transition-opacity duration-300 bg-[#280101]  rounded-md shadow-lg opacity-100 w-[25rem] top-full border-[#fee57e] border-2">
+                                        <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white" onClick={toggleForm}>Membership/Volunteership Form</a>
+                                        <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Careers</a>
+                                        <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Internships</a>
+                                    </div>
+                                )}
                             </li>
                             <li>
-                                <a href="#" className="flex text-xl items-center space-x-2 text-[#280101] hover:text-[#fee57e]">
+                                <a href="#" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]">
                                     <RiGalleryLine size={30}/> <span className='text-3xl'>Gallery</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className="flex text-xl items-center space-x-2 text-[#280101] hover:text-[#fee57e]">
+                                <Link to="/works" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]">
                                     <RiCalendar2Line  size={30}/> <span className='text-3xl'>Our Works</span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <Link to="/blogs" className="flex text-xl items-center space-x-2 text-[#280101] hover:text-[#fee57e]">
+                                <Link to="/blogs" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]">
                                     <RiArticleLine size={30}/> <span className='text-3xl'>Blogs</span>
                                 </Link>
                             </li>
                             <li>
-                                <a href="#" className="flex text-xl items-center space-x-2 text-[#280101] hover:text-[#fee57e]">
+                                <a href="#" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]">
                                     <RiContactsLine size={30}/> <span className='text-3xl'>Contact Us</span>
                                 </a>
                             </li>

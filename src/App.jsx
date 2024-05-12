@@ -1,16 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Updated import for v6 or above
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Use this for older versions (below v6)
 import HomePage from './pages/HomePage';
 import BlogPage from './pages/BlogPage';
+import BlogDetailPage from './pages/BlogDetailPage';
+import WorkPage from './pages/WorkPage';
+import DetailedWorkPage from './pages/DetailedWorkPage';
 
 const App = () => {
   return (
     <Router>
       <div>   
         <Routes>
-          <Route path="/" exact element={<HomePage />} />
-          <Route path="/blogs" exact element={<BlogPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blogs" element={<BlogPage />} />
+          <Route path="/blogs/:id" element={<BlogDetailPage/>}/>
+          <Route path="/works" element={<WorkPage />} />
+          <Route path='/works/:id' element={<DetailedWorkPage/>} />
         </Routes>
       </div>
     </Router>
