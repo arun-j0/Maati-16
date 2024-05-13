@@ -54,7 +54,6 @@ const Navbar = () => {
                                                 <RiUserLine /> <span>About Us</span> <FaChevronDown className="ml-1 text-[#fee57e] hover:text-gray-300" />
                                             </a>
                                             <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
-                                    
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={togglePersonalDetails}>Personal Details</a>
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Core Members</a>
                                                 <a href="#" className="block px-4 py-2 text-2xl text-left text-gray-300 hover:text-white">Our Motto and Objective</a>
@@ -260,7 +259,7 @@ const Navbar = () => {
                     </div>
                 </div>
             )}
-        
+            
             {showFAQs && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
