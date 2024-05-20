@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Topbar from '../components/TopBar';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+const placeholderImage = "https://designshack.net/wp-content/uploads/placeholder-image.png";
 
 const blogs = [
   {
@@ -12,7 +17,7 @@ const blogs = [
     author: "Arun",
     date: "2024-05-01",
     id: 1,
-    image: "blog1.jpg"
+    images: [placeholderImage, placeholderImage, placeholderImage]
   },
   {
     title: "Blog 2",
@@ -21,7 +26,7 @@ const blogs = [
     author: "Arun",
     date: "2024-04-28",
     id: 2,
-    image: "blog2.jpg"
+    images: [placeholderImage]
   },
   // Other blogs
 ];
@@ -34,24 +39,57 @@ const BlogDetailPage = () => {
     return <div>Blog not found</div>;
   }
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Topbar />
       <Navbar />
       <section className="py-12 bg-[#280101] border-b-4 border-[#fee57e] border-8">
         <div className="container mx-auto">
-          <div className="p-6 mx-auto bg-white rounded-lg shadow-md md:w-2/3 lg:w-1/2">
-            <h1 className="text-3xl md:text-6xl font-bold text-[#280101] mb-4">{blog.title}</h1>
-            {blog.image && (
-              <img src={blog.image} alt={blog.title} className="mb-4 rounded-lg" />
+          <div className="p-6 mx-auto bg-white rounded-lg shadow-md md:w-2/3 lg:w-[80%]">
+            <h1 className="text-3xl md:text-5xl font-bold text-[#280101] mb-8">{blog.title}</h1>
+            {blog.images.length === 1 ? (
+              <div className="flex justify-center mb-8">
+                <img
+                  src={blog.images[0]}
+                  alt={blog.title}
+                  className="object-cover w-[60%] h-auto rounded-lg"
+                />
+              </div>
+            ) : (
+              <div className="flex justify-center mb-4">
+                <Slider {...settings} className='max-w-3xl'>
+                  {blog.images.map((image, index) => (
+                    <div key={index} className="flex justify-center">
+                      <img
+                        src={image}
+                        alt={`Image ${index + 1}`}
+                        className="object-cover w-full h-auto rounded-lg"
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
             )}
-            <p className="mb-4 text-lg text-gray-600">{blog.content}</p>
+            <p className="mb-4 text-xl font-bold text-gray-600">{blog.content}</p>
             <p className="mb-4 text-lg text-gray-600">{blog.detailedDescription}</p>
             <div className="flex flex-col items-center justify-between text-sm text-gray-500 md:flex-row">
               <span>By {blog.author}</span>
               <span>{blog.date}</span>
             </div>
-            {/* Button to go back to BlogPage */}
             <div className="flex justify-center mt-8">
               <Link to="/blogs" className="bg-[#fee57e] text-[#280101] py-2 px-4 rounded-md font-semibold hover:bg-yellow-600 transition duration-300">
                 Go Back

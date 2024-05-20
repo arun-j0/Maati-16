@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Topbar from '../components/TopBar';
 import Navbar from '../components/NavBar';
@@ -46,26 +46,28 @@ const DetailedProjectPage = () => {
     autoplay: true,
     autoplaySpeed: 2000
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Topbar />
       <Navbar />
       <section className="py-12 bg-[#280101] border-b-4 border-[#fee57e] border-8">
         <div className="container mx-auto">
-          <div className="p-6 mx-auto bg-white rounded-lg shadow-md md:w-2/3 lg:w-[80%]">
+          <div className="p-6 mx-auto bg-white rounded-lg shadow-md lg:w-[80%]">
             <h1 className="text-3xl md:text-5xl font-bold text-[#280101] mb-8">{project.title}</h1>
             {project.images.length === 1 ? (
               <div className="flex justify-center mb-8">
                 <img
                   src={project.images[0]}
                   alt={project.title}
-                  className="object-cover w-full h-auto rounded-lg" // Set height to auto to maintain aspect ratio
+                  className="object-cover w-[60%] h-auto rounded-lg" // Set height to auto to maintain aspect ratio
                 />
               </div>
             ) : (
               <div className="flex justify-center mb-4"> {/* Centering slider horizontally */}
-                <Slider {...settings} className='max-w-3xl'> {/* Set maximum width for slider */}
+                <Slider {...settings} className='max-w-sm sm:max-w-md md:max-w-3xl'> {/* Set maximum width for slider */}
                   {project.images.map((image, index) => (
                     <div key={index} className="flex justify-center">
                       <img

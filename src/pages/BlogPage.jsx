@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
@@ -22,14 +22,101 @@ const blogs = [
     date: "2024-05-09",
     id: 2,
   },
+  {
+    title: "Blog 1",
+    content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
+    author: "Arun",
+    date: "2024-05-01",
+    id: 1,
+  },
+  {
+    title: "Blog 2",
+    content: "Content of the blog 2..Content of the blog 2..Content of the blog 2..Content of the blog 2..Content of the blog 2..",
+    author: "Arun",
+    date: "2024-05-09",
+    id: 2,
+  },
+  {
+    title: "Blog 1",
+    content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
+    author: "Arun",
+    date: "2024-05-01",
+    id: 1,
+  },
+  {
+    title: "Blog 2",
+    content: "Content of the blog 2..Content of the blog 2..Content of the blog 2..Content of the blog 2..Content of the blog 2..",
+    author: "Arun",
+    date: "2024-05-09",
+    id: 2,
+  },
+  {
+    title: "Blog 1",
+    content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
+    author: "Arun",
+    date: "2024-05-01",
+    id: 1,
+  },
+  {
+    title: "Blog 2",
+    content: "Content of the blog 2..Content of the blog 2..Content of the blog 2..Content of the blog 2..Content of the blog 2..",
+    author: "Arun",
+    date: "2024-05-09",
+    id: 2,
+  },
+  {
+    title: "Blog 1",
+    content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
+    author: "Arun",
+    date: "2024-05-01",
+    id: 1,
+  },
+  {
+    title: "Blog 2",
+    content: "Content of the blog 2..Content of the blog 2..Content of the blog 2..Content of the blog 2..Content of the blog 2..",
+    author: "Arun",
+    date: "2024-05-09",
+    id: 2,
+  },
+  {
+    title: "Blog 1",
+    content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
+    author: "Arun",
+    date: "2024-05-01",
+    id: 1,
+  },
+  {
+    title: "Blog 2",
+    content: "Content of the blog 2..Content of the blog 2..Content of the blog 2..Content of the blog 2..Content of the blog 2..",
+    author: "Arun",
+    date: "2024-05-09",
+    id: 2,
+  },
+  {
+    title: "Blog 1",
+    content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
+    author: "Arun",
+    date: "2024-05-01",
+    id: 1,
+  },
+  {
+    title: "Blog 2",
+    content: "Content of the blog 2..Content of the blog 2..Content of the blog 2..Content of the blog 2..Content of the blog 2..",
+    author: "Arun",
+    date: "2024-05-09",
+    id: 2,
+  },
   // Add other blogs
 ];
+
 
 const BlogPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 12;
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const filteredBlogs = blogs.filter(blog => {
     return (
       blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -98,7 +185,9 @@ const BlogPage = () => {
           {filteredBlogs.length > blogsPerPage && (
             <div className="flex justify-center mt-8">
               {[...Array(Math.ceil(filteredBlogs.length / blogsPerPage))].map((_, index) => (
-                <button key={index} onClick={() => paginate(index + 1)} className={`mx-1 px-4 py-2 bg-[#fee57e] text-[#280101] rounded-md hover:bg-yellow-600 transition duration-300 ${currentPage === index + 1 ? 'font-bold' : ''}`}>
+                <button key={index} 
+                onClick={() => {paginate(index + 1),window.scrollTo({ top: 0, behavior: 'smooth' });}}
+                className={`mx-1 px-4 py-2 bg-[#fee57e] text-[#280101] rounded-md hover:bg-yellow-600 transition duration-300 ${currentPage === index + 1 ? 'font-bold' : ''}`}>
                   {index + 1}
                 </button>
               ))}

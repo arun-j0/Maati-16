@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Topbar from '../components/TopBar';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { FiSearch } from 'react-icons/fi';
-
+import { IoMdClose } from 'react-icons/io';
 const placeholderImage = "https://designshack.net/wp-content/uploads/placeholder-image.png";
 
 const projects = [
@@ -83,6 +83,7 @@ const projects = [
   },
 ];
 
+
 const WorkPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -106,6 +107,9 @@ const WorkPage = () => {
   );
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -116,14 +120,23 @@ const WorkPage = () => {
           <h2 className="text-4xl md:text-6xl font-bold text-center text-[#fee57e] mb-8">Our Works</h2>
 
           <div className="relative mb-8">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by project name or date (YYYY-MM-DD)"
-              className="w-full py-3 pl-4 pr-12 border-2 border-[#fee57e] rounded-full text-gray-900 focus:outline-none focus:border-yellow-600"
-            />
-          </div>
+  <input
+    type="text"
+    value={searchQuery}
+    onChange={(e) => setSearchQuery(e.target.value)}
+    placeholder="Search by project name or date (YYYY-MM-DD)"
+    className="w-full py-3 pl-10 pr-12 border-2 border-[#fee57e] rounded-full text-gray-900 focus:outline-none focus:border-yellow-600"
+  />
+  <FiSearch className="absolute text-gray-500 transform -translate-y-1/2 top-1/2 left-4" />
+  {searchQuery && (
+    <button
+      onClick={() => setSearchQuery('')}
+      className="absolute text-gray-500 transform -translate-y-1/2 top-1/2 right-4"
+    >
+      <IoMdClose />
+    </button>
+  )}
+</div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {currentProjects.map((project) => (
@@ -154,14 +167,21 @@ const WorkPage = () => {
           </div>
 
           {sortedProjects.length > projectsPerPage && (
-            <div className="flex justify-center mt-8">
-              {[...Array(pageCount)].map((_, index) => (
-                <button key={index} onClick={() => paginate(index + 1)} className={`mx-1 px-4 py-2 bg-[#fee57e] text-[#280101] rounded-md hover:bg-yellow-600 transition duration-300 ${currentPage === index + 1 ? 'font-bold' : ''}`}>
-                  {index + 1}
-                </button>
-              ))}
-            </div>
-          )}
+  <div className="flex justify-center mt-8">
+    {[...Array(pageCount)].map((_, index) => (
+      <button
+        key={index}
+        onClick={() => {
+          paginate(index + 1);
+          window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top
+        }}
+        className={`mx-1 px-4 py-2 bg-[#fee57e] text-[#280101] rounded-md hover:bg-yellow-600 transition duration-300 ${currentPage === index + 1 ? 'font-bold' : ''}`}
+      >
+        {index + 1}
+      </button>
+    ))}
+  </div>
+)}
         </div>
       </section>
       <Footer />

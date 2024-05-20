@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -82,6 +82,10 @@ const projects = [
 const RecentWorks = () => {
   const latestProjects = projects.slice(0, 6); // Get the latest 6 projects
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <section className="py-12 bg-[#280101] border-b-4 border-[#fee57e] border-8">
       <div className="container mx-auto">
