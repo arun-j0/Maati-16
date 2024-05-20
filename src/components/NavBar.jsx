@@ -288,9 +288,9 @@ const Navbar = () => {
                 </div>
             )}
             {/* Objective Modal */}
-          {showObjective && (
+{showObjective && (
     <div style={{ position: 'fixed', top: 0, left: 0, zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-        <div style={{ backgroundColor: '#6e4019', color: '#fee57e', padding: '2rem', borderRadius: '0.5rem', maxWidth: '40rem', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', overflow: 'auto' }}>
+        <div style={{ backgroundColor: '#6e4019', color: '#fee57e', padding: '2rem', borderRadius: '0.5rem', maxWidth: '40rem', maxHeight: '80vh', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', overflow: 'auto' }}>
             <h2 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: '1rem' }}>Objective</h2>
             <div style={{ marginBottom: '1rem', lineHeight: 1.6 }}>
                 <p><strong>The Objectives of Our Trust:</strong></p>
@@ -315,6 +315,7 @@ const Navbar = () => {
         </div>
     </div>
 )}
+
 
             {/* Motto Modal */}
             {showMotto && (
