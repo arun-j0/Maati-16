@@ -441,7 +441,7 @@ const Navbar = () => {
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-w-lg overflow-auto form-container">
                         <h2 className="mb-4 text-xl font-semibold">Motto</h2>
-                       OUR MOTO – 
+                       OUR MOTTO – 
                   Maati-16 Trust is committed to bridging the gap in educational access for disadvantaged children. 
                   By offering resources, support, and opportunities for learning, they are paving the way for these children to overcome barriers and reach their full potential. 
                   Through their dedication, Maati-16 Trust is not just changing lives but also shaping a better tomorrow for communities in need.
