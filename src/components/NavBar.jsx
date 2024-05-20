@@ -12,6 +12,8 @@ const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
     const [aboutUsDropdown, setAboutUsDropdown] = useState(false);
     const [careersDropdown, setCareersDropdown] = useState(false);
+    const [showObjective, setShowObjective] = useState(false);
+    const [showMotto, setShowMotto] = useState(false);
 
     let aboutUsTimer;
     let careersTimer;
@@ -71,7 +73,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className={bg-white text-[#fee57e] sticky top-0 z-50 ${isSticky ? 'bg-opacity-0 md:bg-opacity-70' : ''}}>
+        <nav className={`bg-white text-[#fee57e] sticky top-0 z-50 ${isSticky ? 'bg-opacity-0 md:bg-opacity-70' : ''}`}>
             <div className="container px-4 mx-auto">
                 <div className="flex items-center justify-between py-4">
                     {/* Hamburger Menu - Mobile */}
@@ -103,7 +105,10 @@ const Navbar = () => {
                                                 <div onMouseEnter={handleAboutUsHover} onMouseLeave={handleAboutUsLeave} className="absolute left-0 w-[19rem] py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2 z-10">
                                                     <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Personal Details</a>
                                                     <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Core Members</a>
-                                                    <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Our Motto and Objective</a>
+                                                    <div className="px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Our Motto and Objective
+                                                        <button onClick={() => setShowObjective(true)} className="block w-full mt-2 text-left">Objective</button>
+                                                        <button onClick={() => setShowMotto(true)} className="block w-full mt-2 text-left">Motto</button>
+                                                    </div>
                                                     <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">FAQs and Policies</a>
                                                 </div>
                                             )}
@@ -168,7 +173,10 @@ const Navbar = () => {
                                     <div onMouseEnter={handleAboutUsHover} onMouseLeave={handleAboutUsLeave} className="absolute left-0 w-60 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2">
                                         <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Personal Details</a>
                                         <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Core Members</a>
-                                        <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Our Motto and Objective</a>
+                                        <div className="px-4 py-2 text-2xl text-gray-300 hover:text-white">Our Motto and Objective
+                                            <button onClick={() => setShowObjective(true)} className="block w-full mt-2 text-left">Objective</button>
+                                            <button onClick={() => setShowMotto(true)} className="block w-full mt-2 text-left">Motto</button>
+                                        </div>
                                         <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">FAQs and Policies</a>
                                     </div>
                                 )}
@@ -265,6 +273,38 @@ const Navbar = () => {
                             className="px-4 py-2 font-bold text-gray-800 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:shadow-outline"
                             type="button"
                             onClick={toggleFAQs}
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
+            {/* Objective Modal */}
+            {showObjective && (
+                <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+                    <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-w-md overflow-auto form-container">
+                        <h2 className="mb-4 text-xl font-semibold">Our Objective</h2>
+                        <p className="mb-4">[Objective content goes here]</p>
+                        <button
+                            className="px-4 py-2 font-bold text-gray-800 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:shadow-outline"
+                            type="button"
+                            onClick={() => setShowObjective(false)}
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
+            {/* Motto Modal */}
+            {showMotto && (
+                <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+                    <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-w-md overflow-auto form-container">
+                        <h2 className="mb-4 text-xl font-semibold">Our Motto</h2>
+                        <p className="mb-4">[Motto content goes here]</p>
+                        <button
+                            className="px-4 py-2 font-bold text-gray-800 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:shadow-outline"
+                            type="button"
+                            onClick={() => setShowMotto(false)}
                         >
                             Close
                         </button>
