@@ -11,6 +11,7 @@ const Navbar = () => {
     const [showFAQs, setShowFAQs] = useState(false);
     const [showObjective, setShowObjective] = useState(false);
     const [showMotto, setShowMotto] = useState(false);
+    const [showMottoObjectiveButtons, setShowMottoObjectiveButtons] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
     const [aboutUsDropdown, setAboutUsDropdown] = useState(false);
     const [careersDropdown, setCareersDropdown] = useState(false);
@@ -105,10 +106,13 @@ const Navbar = () => {
                                                 <div onMouseEnter={handleAboutUsHover} onMouseLeave={handleAboutUsLeave} className="absolute left-0 w-[19rem] py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2 z-10">
                                                     <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white" onClick={togglePersonalDetails}>Personal Details</a>
                                                     <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Core Members</a>
-                                                    <div className="px-4 py-2 text-xl text-gray-300 hover:text-white">Our Motto and Objective
-                                                        <button onClick={() => setShowObjective(true)} className="block w-full mt-2 text-left">Objective</button>
-                                                        <button onClick={() => setShowMotto(true)} className="block w-full mt-2 text-left">Motto</button>
-                                                    </div>
+                                                    <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white" onClick={() => setShowMottoObjectiveButtons(!showMottoObjectiveButtons)}>Our Motto and Objective</a>
+                                                    {showMottoObjectiveButtons && (
+                                                        <div className="px-4 py-2 text-xl text-gray-300">
+                                                            <button onClick={() => setShowObjective(true)} className="block w-full mt-2 text-left">Objective</button>
+                                                            <button onClick={() => setShowMotto(true)} className="block w-full mt-2 text-left">Motto</button>
+                                                        </div>
+                                                    )}
                                                     <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white" onClick={toggleFAQs}>FAQs and Policies</a>
                                                 </div>
                                             )}
@@ -166,7 +170,7 @@ const Navbar = () => {
                                 <div
                                     onMouseEnter={handleAboutUsHover}
                                     onMouseLeave={handleAboutUsLeave}
-                                    className="flex items-center text-xl space-x-2 text-amber-900 hover:text-[#280101]"
+                                    className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]"
                                 >
                                     <RiUserLine size={30} /> <span className='text-3xl'>About Us</span> <FaChevronDown className="ml-1" />
                                 </div>
@@ -174,10 +178,13 @@ const Navbar = () => {
                                     <div onMouseEnter={handleAboutUsHover} onMouseLeave={handleAboutUsLeave} className="absolute left-0 w-60 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2">
                                         <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white" onClick={togglePersonalDetails}>Personal Details</a>
                                         <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Core Members</a>
-                                        <div className="px-4 py-2 text-2xl text-gray-300 hover:text-white">Our Motto and Objective
-                                            <button onClick={() => setShowObjective(true)} className="block w-full mt-2 text-left">Objective</button>
-                                            <button onClick={() => setShowMotto(true)} className="block w-full mt-2 text-left">Motto</button>
-                                        </div>
+                                        <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white" onClick={() => setShowMottoObjectiveButtons(!showMottoObjectiveButtons)}>Our Motto and Objective</a>
+                                        {showMottoObjectiveButtons && (
+                                            <div className="px-4 py-2 text-2xl text-gray-300">
+                                                <button onClick={() => setShowObjective(true)} className="block w-full mt-2 text-left">Objective</button>
+                                                <button onClick={() => setShowMotto(true)} className="block w-full mt-2 text-left">Motto</button>
+                                            </div>
+                                        )}
                                         <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white" onClick={toggleFAQs}>FAQs and Policies</a>
                                     </div>
                                 )}
