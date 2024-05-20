@@ -292,7 +292,17 @@ const Navbar = () => {
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-w-lg overflow-auto form-container">
                         <h2 className="mb-4 text-xl font-semibold">Objective</h2>
-                        {/* Objective content */}
+                      The Objectives of Our Trust – 
+1.	Education and Skill Development: Our Trust NGO prioritizes and takes initiatives for the education and skill development of needy children. In order to enhance literacy, we provide books and stationery items to disadvantaged children. We also help them to pay their school fees. We shall establish schools, libraries, and vocational training centers, and conduct scholarship programs to empower individuals through education and equip them with the skills needed to succeed in life.
+2.	Healthcare and Sanitation:  Our Trust NGO often works to facilitate access to healthcare services and sanitation facilities, especially in underdeveloped and remote areas. In order to improve public health we shall establish health clinics, organize medical camps, and promote hygiene and sanitation practices.
+3.	Environmental Conservation: Our Trust NGO will focus on environmental conservation and sustainability. We shall work to protect natural habitats, promote sustainable development practices, and raise awareness on environmental issues such as climate change, pollution, and biodiversity loss.
+4.	Human Rights: Our Trust NGO shall work to promote and protect human rights, including civil, political, economic, social, and cultural rights. We shall advocate for the rights of specific groups such as women, children, minorities, refugees, and indigenous people.
+5.	Social Welfare: Our Trust NGOs aim to improve the welfare and well-being of underprivileged and marginalized communities. This should include providing education, healthcare, nutrition, housing, and other basic needs to those in need.
+6.	Community Development: Our Trust NGO shall engage in community development projects aimed at empowering communities to become self-reliant and sustainable. This should include initiatives such as microfinance programs, entrepreneurship training, infrastructure development, and capacity-building workshops.
+7.	Disaster Relief and Rehabilitation: Our Trust NGO plays a crucial role in disaster response and recovery efforts. We shall provide emergency relief supplies, shelter, medical assistance, psychosocial support as well as long-term rehabilitation and reconstruction assistance to disaster-affected communities.
+8.	Empowerment of Women and Gender Equality: Our Trust NGO will focus on promoting gender equality and empowering women and girls. We shall work to eliminate discrimination and violence against women, increase women's access to education and economic opportunities, and promote women's participation in decision-making processes.
+9.	Promotion of Animal Welfare: Our Trust NGO shall advocate for the protection and welfare of animals, including companion animals, wildlife, and livestock. We shall support animal shelters, conduct rescue operations, spaying and neutering programs, and run campaigns against animal cruelty and exploitation.
+
                         <button
                             className="px-4 py-2 font-bold text-gray-800 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:shadow-outline"
                             type="button"
@@ -308,7 +318,13 @@ const Navbar = () => {
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-w-lg overflow-auto form-container">
                         <h2 className="mb-4 text-xl font-semibold">Motto</h2>
-                        {/* Motto content */}
+                       OUR MOTO – 
+                  Maati-16 Trust is committed to bridging the gap in educational access for disadvantaged children. 
+                  By offering resources, support, and opportunities for learning, they are paving the way for these children to overcome barriers and reach their full potential. 
+                  Through their dedication, Maati-16 Trust is not just changing lives but also shaping a better tomorrow for communities in need.
+                  Maati-16 Trust is dedicated to providing education to underprivileged children, ensuring they have the opportunity to build a brighter future. 
+                  Through their efforts, they aim to break the cycle of poverty by empowering young minds with knowledge and skills. With a focus on education, Maati-16 Trust strives to create a more equitable society where every child has access to quality learning regardless of their background or circumstances.
+
                         <button
                             className="px-4 py-2 font-bold text-gray-800 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:shadow-outline"
                             type="button"
