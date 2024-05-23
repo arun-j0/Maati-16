@@ -66,6 +66,16 @@ const Navbar = () => {
         setIsSticky(offset > 0);
     };
 
+    const handleContactClick = (e) => {
+        e.preventDefault(); 
+        setTimeout(() => {
+          const element = document.getElementById('contact');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 300);
+      };
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -139,9 +149,9 @@ const Navbar = () => {
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
+                                            <Link to="/works" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
                                                 <RiCalendar2Line /> <span>Our Works</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
                                             <Link to="/blogs" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
@@ -149,7 +159,7 @@ const Navbar = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <a href="#" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:ttext-[#fee57e]">
+                                            <a href="#contact" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:ttext-[#fee57e]">
                                                 <RiContactsLine /> <span>Contact Us</span>
                                             </a>
                                         </li>
@@ -221,9 +231,9 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <a href="#" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]">
+                                <Link to="/" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]" onClick={handleContactClick}>
                                     <RiContactsLine size={30} /> <span className='text-3xl'>Contact Us</span>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

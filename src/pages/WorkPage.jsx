@@ -142,7 +142,7 @@ const WorkPage = () => {
             {currentProjects.map((project) => (
               <motion.div
                 key={project.id}
-                className="relative"
+                className="relative overflow-hidden w-[90%] mx-auto"
                 whileHover={{ scale: 1.05 }}
               >
                <Link to={`/works/${project.id}`}>
@@ -152,7 +152,7 @@ const WorkPage = () => {
                     className="w-full h-auto rounded-md shadow-md"
                   />
                   <motion.div
-                    className="absolute inset-0 flex flex-col items-center justify-center text-center bg-[rgba(0,0,0,0.7)] opacity-0 transition-opacity duration-300"
+                    className="absolute inset-0 flex flex-col items-center rounded-md justify-center text-center bg-[rgba(0,0,0,0.7)] opacity-0 transition-opacity duration-300"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     whileHover={{ opacity: 0 }}
