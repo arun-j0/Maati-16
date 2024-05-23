@@ -8,42 +8,42 @@ const blogs = [
     content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
     author: "Arun",
     date: "May 1, 2024",
-    link: "#"
+    id:1
   },
   {
     title: "Blog 2",
     content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
     author: "Arun",
     date: "April 28, 2024",
-    link: "#"
+    id:2
   },
   {
     title: "Blog 3",
     content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
     author: "Arun",
     date: "April 25, 2024",
-    link: "#"
+    id:2
   },
   {
     title: "Blog 4",
     content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
     author: "Arun",
     date: "April 22, 2024",
-    link: "#"
+    id:2
   },
   {
     title: "Blog 5",
     content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
     author: "Arun",
     date: "April 19, 2024",
-    link: "#"
+    id:2
   },
   {
     title: "Blog 6",
     content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
     author: "Arun",
     date: "April 15, 2024",
-    link: "#"
+    id:2
   },
 ];
 
@@ -73,7 +73,7 @@ const BlogSection = () => {
                 <span>By {blog.author}</span>
                 <span>{blog.date}</span>
               </div>
-              <a href={blog.link} className="block mt-4 text-[#280101] font-semibold hover:text-yellow-600">Read More</a>
+              <Link to={`/blogs/${blog.id}`} className="block mt-4 text-[#280101] font-semibold hover:text-yellow-600">Read More</Link>
             </motion.div>
           ))}
         </div>
