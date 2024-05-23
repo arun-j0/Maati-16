@@ -78,7 +78,7 @@ const Navbar = () => {
             <div className="container px-4 mx-auto">
                 <div className="flex items-center justify-between py-4">
                     {/* Hamburger Menu - Mobile */}
-                    <div className="right-0 flex-grow text-right md:hidden">
+                    <div className="right-0 flex-grow text-right lg:hidden">
                         <button onClick={toggleMenu} className={`hover:text-[#fee57e] focus:outline-none ${isSticky ? 'text-[#fee57e]' : 'text-[#280101]'}`}>
                             <GiHamburgerMenu className="w-6 h-6" />
                         </button>
@@ -159,7 +159,7 @@ const Navbar = () => {
                         )}
                     </div>
                     {/* Menu - Desktop */}
-                    <div className="hidden w-full md:flex md:items-center md:justify-center md:space-x-5">
+                    <div className="hidden w-full lg:flex lg:items-center lg:justify-center lg:space-x-5">
                         <ul className="flex space-x-4">
                             <li>
                                 <Link to="/" className="flex items-center space-x-2 text-xl text-amber-900 text-center hover:text-[#280101]">
@@ -233,7 +233,7 @@ const Navbar = () => {
             {showForm && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
-                        <h2 className="text-xl font-semibold mb-4">Membership/Volunteership Form</h2>
+                        <h2 className="mb-4 text-xl font-semibold">Membership/Volunteership Form</h2>
                         <form>
                             <div className="mb-4">
                                 <label className="block text-[#fee57e] text-sm font-bold mb-2" htmlFor="name">
@@ -326,7 +326,7 @@ const Navbar = () => {
                             </div>
                             <div className="flex items-center justify-between">
                                 <button
-                                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    className="px-4 py-2 font-bold text-gray-800 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:shadow-outline"
                                     type="button"
                                     onClick={handleFormClose}
                                 >
@@ -368,7 +368,7 @@ const Navbar = () => {
            {showFAQs && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
-                        <h2 className="text-xl font-semibold mb-4">FAQs and Policies</h2>
+                        <h2 className="mb-4 text-xl font-semibold">FAQs and Policies</h2>
                         <dl>
                             <div className="mb-4">
                                 <dt className="text-2xl font-bold mb-2 text-[#fee57e]">What is the mission of Maati 16 Trust?</dt>
