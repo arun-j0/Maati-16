@@ -67,7 +67,7 @@ const DetailedProjectPage = () => {
               </div>
             ) : (
               <div className="flex justify-center mb-4"> {/* Centering slider horizontally */}
-                <Slider {...settings} className='max-w-sm sm:max-w-md md:max-w-3xl'> {/* Set maximum width for slider */}
+                <Slider {...settings} className='w-full rounded-lg lg:max-w-3xl'> {/* Set maximum width for slider */}
                   {project.images.map((image, index) => (
                     <div key={index} className="flex justify-center">
                       <img
