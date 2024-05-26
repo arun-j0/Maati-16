@@ -12,7 +12,7 @@ const blogs = [
     title: "Blog 1",
     content: "Content of the blog..Content of the blog..Content of the blog..Content of the blog..Content of the blog..",
     author: "Arun",
-    date: "2024-05-01",
+    date: "2024-05-25",
     id: 1,
   },
   {

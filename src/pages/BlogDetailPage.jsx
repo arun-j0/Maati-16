@@ -59,19 +59,19 @@ const BlogDetailPage = () => {
       <Navbar />
       <section className="py-12 bg-[#280101] border-b-4 border-[#fee57e] border-8">
         <div className="container mx-auto">
-          <div className="p-6 mx-auto bg-white rounded-lg shadow-md w-[90%]">
+          <div className="p-6 mx-auto bg-white rounded-lg shadow-md w-[95%] lg:w-[80%]">
             <h1 className="text-3xl md:text-5xl font-bold text-[#280101] mb-8">{blog.title}</h1>
             {blog.images.length === 1 ? (
               <div className="flex justify-center mb-8">
                 <img
                   src={blog.images[0]}
                   alt={blog.title}
-                  className="object-cover  md:w-[60%] h-auto rounded-lg"
+                  className="object-cover w-full lg:w-[80%] h-auto rounded-lg"
                 />
               </div>
             ) : (
-              <div className="flex justify-center mb-4">
-                <Slider {...settings} className='max-w-3xl'>
+              <div className="flex justify-center mb-4 ">
+                <Slider {...settings} className='w-full rounded-lg lg:max-w-3xl '>
                   {blog.images.map((image, index) => (
                     <div key={index} className="flex justify-center">
                       <img

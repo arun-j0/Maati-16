@@ -55,14 +55,14 @@ const DetailedProjectPage = () => {
       <Navbar />
       <section className="py-12 bg-[#280101] border-b-4 border-[#fee57e] border-8">
         <div className="container mx-auto">
-          <div className="p-6 mx-auto bg-white rounded-lg shadow-md lg:w-[80%]">
+          <div className="p-6 mx-auto bg-white rounded-lg shadow-md w-[95%] lg:w-[80%]">
             <h1 className="text-3xl md:text-5xl font-bold text-[#280101] mb-8">{project.title}</h1>
             {project.images.length === 1 ? (
               <div className="flex justify-center mb-8">
                 <img
                   src={project.images[0]}
                   alt={project.title}
-                  className="object-cover w-[60%] h-auto rounded-lg" // Set height to auto to maintain aspect ratio
+                  className="object-cover w-full lg:w-[80%] h-auto rounded-lg" // Set height to auto to maintain aspect ratio
                 />
               </div>
             ) : (
