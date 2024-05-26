@@ -27,7 +27,7 @@ const RecentWorks = () => {
   }, []);
 
   return (
-    <section className="py-12 bg-[#280101] border-b-4 border-[#fee57e]">
+    <section className="py-12 bg-[#280101] border-b-4 border-[#fee57e] border-8">
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-6xl font-bold text-center text-[#fee57e] mb-8">Recent Works</h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
