@@ -144,9 +144,9 @@ const Navbar = () => {
                                             )}
                                         </li>
                                         <li>
-                                            <a href="#" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
+                                            <Link to="/gallery" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
                                                 <RiGalleryLine /> <span>Gallery</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
                                             <Link to="/works" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
@@ -216,9 +216,9 @@ const Navbar = () => {
                                 )}
                             </li>
                             <li>
-                                <a href="#" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]">
+                                <Link to="/gallery" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]">
                                     <RiGalleryLine size={30} /> <span className='text-3xl'>Gallery</span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <Link to="/works" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]">
@@ -231,7 +231,7 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]" onClick={handleContactClick}>
+                                <Link to="#" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]" onClick={handleContactClick}>
                                     <RiContactsLine size={30} /> <span className='text-3xl'>Contact Us</span>
                                 </Link>
                             </li>

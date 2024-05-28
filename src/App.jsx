@@ -5,6 +5,7 @@ import BlogPage from './pages/BlogPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import WorkPage from './pages/WorkPage';
 import DetailedWorkPage from './pages/DetailedWorkPage';
+import GalleryPage from './pages/GalleryPage';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/blogs/:id" element={<BlogDetailPage/>}/>
           <Route path="/works" element={<WorkPage />} />
           <Route path='/works/:id' element={<DetailedWorkPage/>} />
+          <Route path="/gallery" element={<GalleryPage/>}/>
         </Routes>
       </div>
     </Router>
