@@ -84,12 +84,12 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className={`bg-white text-[#280101] sticky top-0 z-50 ${isSticky ? 'bg-opacity-0 md:bg-opacity-70' : ''}`}>
+        <nav className={bg-white text-[#fee57e] sticky top-0 z-50 ${isSticky ? 'bg-opacity-0 md:bg-opacity-70' : ''}}>
             <div className="container px-4 mx-auto">
                 <div className="flex items-center justify-between py-4">
                     {/* Hamburger Menu - Mobile */}
                     <div className="right-0 flex-grow text-right lg:hidden">
-                        <button onClick={toggleMenu} className={`hover:text-[#fee57e] focus:outline-none ${isSticky ? 'text-[#fee57e]' : 'text-[#280101]'}`}>
+                        <button onClick={toggleMenu} className={hover:text-[#fee57e] focus:outline-none ${isSticky ? 'text-[#fee57e]' : 'text-[#280101]'}}>
                             <GiHamburgerMenu className="w-6 h-6" />
                         </button>
                         {isOpen && (
@@ -113,7 +113,7 @@ const Navbar = () => {
                                                 <RiUserLine /> <span>About Us</span> <FaChevronDown className="ml-1 text-[#fee57e] hover:text-[#fee57e]" />
                                             </div>
                                             {aboutUsDropdown && (
-                                                <div onMouseEnter={handleAboutUsHover} onMouseLeave={handleAboutUsLeave} className="absolute left-0 w-[19rem] py-2 mt-2 transition-opacity duration-300 bg-[#8B4513] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2 z-10">
+                                                <div onMouseEnter={handleAboutUsHover} onMouseLeave={handleAboutUsLeave} className="absolute left-0 w-[19rem] py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2 z-10">
                                                     <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white" onClick={togglePersonalDetails}>Personal Details</a>
                                                     <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Core Members</a>
                                                     <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white" onClick={() => setShowMottoObjectiveButtons(!showMottoObjectiveButtons)}>Our Motto and Objective</a>
@@ -136,7 +136,7 @@ const Navbar = () => {
                                                 <RiBriefcaseLine /> <span>Careers</span> <FaChevronDown className="ml-1" />
                                             </div>
                                             {careersDropdown && (
-                                                <div onMouseEnter={handleCareersHover} onMouseLeave={handleCareersLeave} className="absolute left-0 w-[25rem] py-2 mt-2 transition-opacity duration-300 bg-[#D2691E] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2 z-10">
+                                                <div onMouseEnter={handleCareersHover} onMouseLeave={handleCareersLeave} className="absolute left-0 w-[25rem] py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2 z-10">
                                                     <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white" onClick={toggleForm}>Membership/Volunteership Form</a>
                                                     <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Careers</a>
                                                     <a href="#" className="block px-4 py-2 text-xl text-left text-gray-300 hover:text-white">Internships</a>
@@ -159,7 +159,7 @@ const Navbar = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <a href="#contact" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:text-[#fee57e]">
+                                            <a href="#contact" className="flex text-2xl items-center space-x-2 text-[#fee57e] hover:ttext-[#fee57e]">
                                                 <RiContactsLine /> <span>Contact Us</span>
                                             </a>
                                         </li>
@@ -172,7 +172,7 @@ const Navbar = () => {
                     <div className="hidden w-full lg:flex lg:items-center lg:justify-center lg:space-x-5">
                         <ul className="flex space-x-4">
                             <li>
-                                <Link to="/" className="flex items-center space-x-2 text-xl text-[#280101] text-center hover:text-[#CD853F]">
+                                <Link to="/" className="flex items-center space-x-2 text-xl text-amber-900 text-center hover:text-[#280101]">
                                     <RiHome4Line size={30} /> <span className='text-3xl'>Home</span>
                                 </Link>
                             </li>
@@ -180,12 +180,12 @@ const Navbar = () => {
                                 <div
                                     onMouseEnter={handleAboutUsHover}
                                     onMouseLeave={handleAboutUsLeave}
-                                    className="flex text-xl items-center space-x-2 text-[#280101] hover:text-[#CD853F]"
+                                    className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]"
                                 >
                                     <RiUserLine size={30} /> <span className='text-3xl'>About Us</span> <FaChevronDown className="ml-1" />
                                 </div>
                                 {aboutUsDropdown && (
-                                    <div onMouseEnter={handleAboutUsHover} onMouseLeave={handleAboutUsLeave} className="absolute left-0 w-60 py-2 mt-2 transition-opacity duration-300 bg-[#8B4513] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2">
+                                    <div onMouseEnter={handleAboutUsHover} onMouseLeave={handleAboutUsLeave} className="absolute left-0 w-60 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-100 top-full border-[#fee57e] border-2">
                                         <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white" onClick={togglePersonalDetails}>Personal Details</a>
                                         <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Core Members</a>
                                         <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white" onClick={() => setShowMottoObjectiveButtons(!showMottoObjectiveButtons)}>Our Motto and Objective</a>
@@ -203,12 +203,12 @@ const Navbar = () => {
                                 <div
                                     onMouseEnter={handleCareersHover}
                                     onMouseLeave={handleCareersLeave}
-                                    className="flex text-xl items-center space-x-2 text-[#280101] hover:text-[#CD853F]"
+                                    className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]"
                                 >
                                     <RiBriefcaseLine size={30} /> <span className='text-3xl'>Careers</span> <FaChevronDown className="ml-1" />
                                 </div>
                                 {careersDropdown && (
-                                    <div onMouseEnter={handleCareersHover} onMouseLeave={handleCareersLeave} className="absolute left-0 py-2 mt-2 transition-opacity duration-300 bg-[#D2691E] rounded-md shadow-lg opacity-100 w-[25rem] top-full border-[#fee57e] border-2">
+                                    <div onMouseEnter={handleCareersHover} onMouseLeave={handleCareersLeave} className="absolute left-0 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-100 w-[25rem] top-full border-[#fee57e] border-2">
                                         <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white" onClick={toggleForm}>Membership/Volunteership Form</a>
                                         <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Careers</a>
                                         <a href="#" className="block px-4 py-2 text-2xl text-gray-300 hover:text-white">Internships</a>
@@ -216,22 +216,22 @@ const Navbar = () => {
                                 )}
                             </li>
                             <li>
-                                <Link to="/gallery" className="flex text-xl items-center space-x-2 text-[#280101] hover:text-[#CD853F]">
+                                <Link to="/gallery" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]">
                                     <RiGalleryLine size={30} /> <span className='text-3xl'>Gallery</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/works" className="flex text-xl items-center space-x-2 text-[#280101] hover:text-[#CD853F]">
+                                <Link to="/works" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]">
                                     <RiCalendar2Line size={30} /> <span className='text-3xl'>Our Works</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/blogs" className="flex text-xl items-center space-x-2 text-[#280101] hover:text-[#CD853F]">
+                                <Link to="/blogs" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]">
                                     <RiArticleLine size={30} /> <span className='text-3xl'>Blogs</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="flex text-xl items-center space-x-2 text-[#280101] hover:text-[#CD853F]" onClick={handleContactClick}>
+                                <Link to="#" className="flex text-xl items-center space-x-2 text-amber-900 hover:text-[#280101]" onClick={handleContactClick}>
                                     <RiContactsLine size={30} /> <span className='text-3xl'>Contact Us</span>
                                 </Link>
                             </li>
@@ -239,7 +239,6 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-      
             {/* Form Modal */}
             {showForm && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
