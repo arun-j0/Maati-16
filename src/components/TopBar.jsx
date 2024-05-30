@@ -23,7 +23,7 @@ const Topbar = () => {
           <a href="#" className="mr-4 text-amber-900 hover:text-[#fee57e]">
             <FaTwitter className="w-6 h-6 fill-current" />
           </a>
-          <a href="#" className="text-amber-900 hover:text-[#fee57e]">
+          <a href="https://www.linkedin.com/in/hemanshu-dubey-7257092b5" className="text-amber-900 hover:text-[#fee57e]" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="w-6 h-6 fill-current" />
           </a>
         </div>
