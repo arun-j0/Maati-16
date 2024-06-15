@@ -7,6 +7,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showForm, setShowForm] = useState(false); 
     const [showFAQs, setShowFAQs] = useState(false); 
+    const [showPersonalDetails, setShowPersonalDetails] = useState(false);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -22,6 +23,10 @@ const Navbar = () => {
 
     const toggleFAQs = () => {
         setShowFAQs(!showFAQs);
+    };
+
+    const togglePersonalDetails = () => {
+        setShowPersonalDetails(!showPersonalDetails);
     };
 
     return (
@@ -49,14 +54,14 @@ const Navbar = () => {
                                                 <RiUserLine /> <span>About Us</span> <FaChevronDown className="ml-1 text-[#fee57e] hover:text-gray-300" />
                                             </a>
                                             <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
-                                                <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Personal Details</a>
+                                                <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={togglePersonalDetails}>Personal Details</a>
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Core Members</a>
                                                 <a href="#" className="block px-4 py-2 text-2xl text-left text-gray-300 hover:text-white">Our Motto and Objective</a>
                                                 <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleFAQs}>FAQs and Policies</a>
                                             </div>
                                         </li>
                                         <li className="relative group">
-                                            <a href="#" className="flex items-center space-x-2 text-[#fee57e] hover:text-gray-300">
+                                            <a href="#" className="flex items-center text-xl space-x-2 text-[#fee57e] hover:text-gray-300">
                                                 <RiBriefcaseLine /> <span>Careers</span> <FaChevronDown className="ml-1" />
                                             </a>
                                             <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
@@ -101,10 +106,9 @@ const Navbar = () => {
                                     <RiUserLine /> <span>About Us</span> <FaChevronDown className="ml-1" />
                                 </a>
                                 <div className="absolute left-0 w-48 py-2 mt-2 transition-opacity duration-300 bg-[#280101] rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100 border-[#fee57e] border-2">
-                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Personal Details</a>
+                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={togglePersonalDetails}>Personal Details</a>
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Core Members</a>
-                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Our Motto and Objective</a>
-    
+                                    <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white">Our Motto and Objective</a>
                                     <a href="#" className="block px-4 py-2 text-gray-300 hover:text-white" onClick={toggleFAQs}>FAQs and Policies</a>
                                 </div>
                             </li>
@@ -255,6 +259,7 @@ const Navbar = () => {
                     </div>
                 </div>
             )}
+            
             {showFAQs && (
                 <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
                     <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
@@ -298,6 +303,27 @@ const Navbar = () => {
                     </div>
                 </div>
             )}
+       {showPersonalDetails && (
+    <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+        <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-h-[80vh] overflow-auto form-container">
+            <h2 className="text-3xl font-bold text-[#fee57e] mb-4 border-b border-[#fee57e] pb-2">
+                <u>Personal Details</u>
+            </h2>
+            {/* Personal details content */}
+            <button onClick={togglePersonalDetails} className="absolute top-4 right-4 text-[#fee57e]">
+                <FaTimes className="w-6 h-6" />
+            </button>
+            <div className="text-lg text-[#fee57e]">
+                <p><span className="font-semibold">Founder:</span> Hemanshu Dubey</p>
+                <p><span className="font-semibold">Contact Number / WhatsApp:</span> +91 9870112134</p>
+                <p><span className="font-semibold">Registered Address:</span> Plot D-5, Block D, Om Vihar, Phase – V, Near West Point School, New Delhi. Zip Code – 110059</p>
+                <p><span className="font-semibold">Instagram:</span> <a href="https://www.instagram.com/maati16._?igsh=MWt1Y2Y3cThzem5xaQ==" className="text-[#fee57e] hover:text-[#fee57e]">maati16</a></p>
+                <p><span className="font-semibold">Linkedin:</span> <a href="https://www.linkedin.com/in/hemanshu-dubey-7257092b5" className="text-[#fee57e] hover:text-[#fee57e]">Hemanshu Dubey</a></p>
+            </div>
+        </div>
+    </div>
+)}
+
         </nav>
     );
 };
