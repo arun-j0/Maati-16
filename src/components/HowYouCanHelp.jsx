@@ -1,5 +1,6 @@
 import React from 'react';
-import {Tilt} from 'react-tilt';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Tilt } from 'react-tilt';
 
 const HowYouCanHelp = () => {
   return (
@@ -31,4 +32,49 @@ const HowYouCanHelp = () => {
   );
 };
 
-export default HowYouCanHelp;
+const Donate = () => {
+  return (
+    <section className="py-12 bg-[#f5f5f5] border-t-8 border-[#fee57e]">
+      <div className="container px-4 mx-auto">
+        <h2 className="mb-8 text-3xl font-bold text-center text-[#280101] md:text-6xl">Make a Donation</h2>
+        <p className="mb-6 text-xl text-center text-black md:text-2xl">
+          Thank you for your generosity. Your support helps us continue our mission and make a difference.
+        </p>
+        <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+          <form>
+            <div className="mb-4">
+              <label className="block mb-2 text-lg text-[#280101]" htmlFor="name">Name</label>
+              <input className="w-full px-3 py-2 border rounded-md" type="text" id="name" name="name" required />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2 text-lg text-[#280101]" htmlFor="email">Email</label>
+              <input className="w-full px-3 py-2 border rounded-md" type="email" id="email" name="email" required />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2 text-lg text-[#280101]" htmlFor="amount">Donation Amount</label>
+              <input className="w-full px-3 py-2 border rounded-md" type="number" id="amount" name="amount" required />
+            </div>
+            <button className="w-full px-6 py-3 text-[#280101] transition duration-300 bg-[#fee57e] rounded-md hover:bg-yellow-600 text-lg md:text-2xl" type="submit">Donate Now</button>
+          </form>
+        </div>
+        <p className="mt-6 text-lg text-center text-[#280101]">
+          Every contribution, no matter how small, helps us reach our goals. We appreciate your support!
+        </p>
+      </div>
+    </section>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact component={HowYouCanHelp} />
+        <Route path="/donate" component={Donate} />
+        {/* Add other routes as needed */}
+      </Switch>
+    </Router>
+  );
+};
+
+export default App;
