@@ -419,7 +419,6 @@ const Navbar = () => {
                 </div>
             )}
             {/* Objective Modal */}
-{/* Objective Modal */}
 {showObjective && (
     <div style={{ position: 'fixed', top: 0, left: 0, zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
         <div style={{ backgroundColor: '#6e4019', color: '#fee57e', padding: '2rem', borderRadius: '0.5rem', maxWidth: '40rem', maxHeight: '80vh', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', overflow: 'auto' }}>
@@ -447,29 +446,28 @@ const Navbar = () => {
         </div>
     </div>
 )}
+            {/* Motto Modal */}
+            {showMotto && (
+                <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+                    <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-w-lg overflow-auto form-container">
+                        <h2 className="mb-4 text-xl font-semibold">Motto</h2>
+                       OUR MOTTO – 
+                  Maati-16 Trust is committed to bridging the gap in educational access for disadvantaged children. 
+                  By offering resources, support, and opportunities for learning, they are paving the way for these children to overcome barriers and reach their full potential. 
+                  Through their dedication, Maati-16 Trust is not just changing lives but also shaping a better tomorrow for communities in need.
+                  Maati-16 Trust is dedicated to providing education to underprivileged children, ensuring they have the opportunity to build a brighter future. 
+                  Through their efforts, they aim to break the cycle of poverty by empowering young minds with knowledge and skills. With a focus on education, Maati-16 Trust strives to create a more equitable society where every child has access to quality learning regardless of their background or circumstances.
 
-{/* Motto Modal */}
-{showMotto && (
-    <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-        <div className="bg-[#6e4019] text-[#fee57e] p-8 rounded-md shadow-lg max-w-lg overflow-auto form-container">
-            <h2 className="mb-4 text-xl font-semibold">Motto</h2>
-            <p>OUR MOTTO – 
-                Maati-16 Trust is committed to bridging the gap in educational access for disadvantaged children. 
-                By offering resources, support, and opportunities for learning, they are paving the way for these children to overcome barriers and reach their full potential. 
-                Through their dedication, Maati-16 Trust is not just changing lives but also shaping a better tomorrow for communities in need.
-                Maati-16 Trust is dedicated to providing education to underprivileged children, ensuring they have the opportunity to build a brighter future. 
-                Through their efforts, they aim to break the cycle of poverty by empowering young minds with knowledge and skills. With a focus on education, Maati-16 Trust strives to create a more equitable society where every child has access to quality learning regardless of their background or circumstances.
-            </p>
-            <button
-                className="px-4 py-2 font-bold text-gray-800 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:shadow-outline"
-                type="button"
-                onClick={() => setShowMotto(false)}
-            >
-                Close
-            </button>
-        </div>
-    </div>
-)}
+                        <button
+                            className="px-4 py-2 font-bold text-gray-800 bg-gray-300 rounded hover:bg-gray-400 focus:outline-none focus:shadow-outline"
+                            type="button"
+                            onClick={() => setShowMotto(false)}
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };
