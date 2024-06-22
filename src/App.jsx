@@ -6,18 +6,20 @@ import BlogDetailPage from './pages/BlogDetailPage';
 import WorkPage from './pages/WorkPage';
 import DetailedWorkPage from './pages/DetailedWorkPage';
 import GalleryPage from './pages/GalleryPage';
+import DonationPage from './pages/DonationPage'; // Import DonationPage
 
 const App = () => {
   return (
     <Router>
-      <div>   
+      <div>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/blogs" element={<BlogPage />} />
-          <Route path="/blogs/:id" element={<BlogDetailPage/>}/>
+          <Route path="/blogs/:id" element={<BlogDetailPage />} />
           <Route path="/works" element={<WorkPage />} />
-          <Route path='/works/:id' element={<DetailedWorkPage/>} />
-          <Route path="/gallery" element={<GalleryPage/>}/>
+          <Route path="/works/:id" element={<DetailedWorkPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/donate" element={<DonationPage />} /> {/* Add DonationPage route */}
         </Routes>
       </div>
     </Router>
