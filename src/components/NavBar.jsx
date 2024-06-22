@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { RiHome4Line, RiUserLine, RiBriefcaseLine, RiGalleryLine, RiCalendar2Line, RiArticleLine, RiContactsLine } from 'react-icons/ri';
 import { FaChevronDown, FaTimes } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
