@@ -132,7 +132,7 @@ const Navbar = () => {
                                             About Us <FaChevronDown className={`ml-1 ${aboutUsDropdown ? 'transform rotate-180' : ''}`} />
                                         </button>
                                         {aboutUsDropdown && (
-                                            <div className="bg-[#280101] absolute top-full left-0 w-full py-2 rounded-md shadow-lg border-[#fee57e] border-2 z-10">
+                                            <div className="bg-[#280101] absolute top-full left-0 w-[200px] py-2 rounded-md shadow-lg border-[#fee57e] border-2 z-10">
                                                 <button onClick={togglePersonalDetails} className="block px-4 py-2 text-xl text-gray-300 hover:text-white">Personal Details</button>
                                                 <a href="#" className="block px-4 py-2 text-xl text-gray-300 hover:text-white">Core Members</a>
                                                 <a href="#" className="block px-4 py-2 text-xl text-gray-300 hover:text-white" onClick={() => setShowMottoObjectiveButtons(!showMottoObjectiveButtons)}>Our Motto and Objective</a>
@@ -154,7 +154,7 @@ const Navbar = () => {
                                             Careers <FaChevronDown className={`ml-1 ${careersDropdown ? 'transform rotate-180' : ''}`} />
                                         </button>
                                         {careersDropdown && (
-                                            <div className="bg-[#280101] absolute top-full left-0 w-full py-2 rounded-md shadow-lg border-[#fee57e] border-2 z-10">
+                                            <div className="bg-[#280101] absolute top-full left-[-70px] w-[350px] py-2 rounded-md shadow-lg border-[#fee57e] border-2 z-10">
                                                 <a href="#" className="block px-4 py-2 text-xl text-gray-300 hover:text-white" onClick={toggleForm}>Membership/Volunteership Form</a>
                                                 <a href="#" className="block px-4 py-2 text-xl text-gray-300 hover:text-white">Careers</a>
                                                 <a href="#" className="block px-4 py-2 text-xl text-gray-300 hover:text-white">Internships</a>
