@@ -15,7 +15,7 @@ function HomePage() {
   }, []);
   return (
     <>
-      <TopBar/>
+    
       <Navbar/>
       <HeroSection/>
       <Introduction/>

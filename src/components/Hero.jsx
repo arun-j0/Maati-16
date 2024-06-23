@@ -15,7 +15,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[300px] md:h-[650px]  border-b-4 border-[#fee57e] border-8 -z-10">
+    <div className="relative w-full h-[300px] md:h-[725px]  border-b-4 border-[#fee57e] border-8 -z-10">
       {images.map((image, index) => (
         <img
           key={index}

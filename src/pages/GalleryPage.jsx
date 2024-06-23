@@ -9,7 +9,7 @@ function GalleryPage() {
   
   return (
     <>
-    <Topbar/>
+   
     <Navbar/>
     <Gallery/>
     <Footer/>

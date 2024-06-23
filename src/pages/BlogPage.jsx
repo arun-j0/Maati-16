@@ -135,7 +135,7 @@ const BlogPage = () => {
 
   return (
     <>
-      <Topbar />
+     
       <Navbar />
       <section className="py-12 bg-[#280101] border-b-4 border-[#fee57e] border-8">
         <div className="container mx-auto">

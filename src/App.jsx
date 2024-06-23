@@ -6,6 +6,8 @@ import BlogDetailPage from './pages/BlogDetailPage';
 import WorkPage from './pages/WorkPage';
 import DetailedWorkPage from './pages/DetailedWorkPage';
 import GalleryPage from './pages/GalleryPage';
+import DonationPage from './pages/DonationPage';
+
 
 const App = () => {
   return (
@@ -18,6 +20,7 @@ const App = () => {
           <Route path="/works" element={<WorkPage />} />
           <Route path='/works/:id' element={<DetailedWorkPage/>} />
           <Route path="/gallery" element={<GalleryPage/>}/>
+          <Route path="/donation" element={<DonationPage/>}/>
         </Routes>
       </div>
     </Router>
