@@ -1,10 +1,7 @@
 import React from 'react';
-import { Tilt } from 'react-tilt';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import {Tilt} from 'react-tilt';
 
 const HowYouCanHelp = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
-
   return (
     <section className="py-12 bg-[#280101] border-8 border-b-4 border-[#fee57e]">
       <div className="container px-4 mx-auto">
@@ -14,12 +11,7 @@ const HowYouCanHelp = () => {
           <Tilt className="flex flex-col items-center flex-1 p-6 bg-white rounded-lg shadow-md">
             <h3 className="mb-4 text-2xl md:text-4xl font-bold text-[#280101]">Donate</h3>
             <p className="mb-6 text-xl text-center text-black md:text-2xl">Your donation can make a big difference. Support our cause and help those in need.</p>
-            <button 
-              onClick={() => navigate('/donate')} 
-              className="inline-block px-6 py-3 text-[#280101] transition duration-300 bg-[#fee57e] rounded-md hover:bg-yellow-600 text-lg md:text-2xl"
-            >
-              Donate Now
-            </button>
+            <a href="/donate" className="inline-block px-6 py-3 text-[#280101] transition duration-300 bg-[#fee57e] rounded-md hover:bg-yellow-600 text-lg md:text-2xl">Donate Now</a>
           </Tilt>
           {/* Volunteer */}
           <Tilt className="flex flex-col items-center flex-1 p-6 bg-white rounded-lg shadow-md">
@@ -35,8 +27,8 @@ const HowYouCanHelp = () => {
           </Tilt>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  );
 };
 
 export default HowYouCanHelp;
