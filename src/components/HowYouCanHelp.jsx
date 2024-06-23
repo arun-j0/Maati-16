@@ -35,8 +35,8 @@ const HowYouCanHelp = () => {
           </Tilt>
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
 };
 
 export default HowYouCanHelp;
