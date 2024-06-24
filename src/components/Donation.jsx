@@ -23,7 +23,7 @@
             color: #5d493e; /* Dark Brown text */
         }
         h1 {
-            text-align: center;
+            text-align: center; 
             color: #8b5a2b; /* Brown */
             margin-bottom: 20px;
             font-family: 'Great Vibes', cursive;
