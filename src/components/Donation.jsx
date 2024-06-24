@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; // Assuming you are using react-router for navigation
+import { useHistory } from 'react-router-dom';
 
 const Donation = () => {
   const [name, setName] = useState('');
