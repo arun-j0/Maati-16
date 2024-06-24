@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 
-const Donation = () => {
+const Donation = ({ onClose }) => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [email, setEmail] = useState('');
@@ -14,11 +14,28 @@ const Donation = () => {
     // Handle form submission logic, e.g., send data to backend or payment gateway
     console.log({ name, address, email, pan, amount, paymentMethod });
     alert('Thank you for your donation!');
+    // Clear form fields after submission
+    setName('');
+    setAddress('');
+    setEmail('');
+    setPan('');
+    setAmount('');
+    setPaymentMethod('');
+    // Optionally, close the form
+    onClose();
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen p-6 bg-light-brown">
-      <div className="w-full max-w-md p-8 bg-lighter-brown rounded-md shadow-md">
+      <div className="relative w-full max-w-md p-8 bg-lighter-brown rounded-md shadow-md">
+        <button
+          className="absolute text-gray-600 top-2 right-2 hover:text-gray-900"
+          onClick={onClose}
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
         <h2 className="mb-6 text-3xl font-handwriting text-center text-brown">Donate to Bank of Baroda</h2>
         <div className="mb-6 text-dark-brown">
           <h3 className="text-lg font-handwriting">Bank Account Details</h3>
@@ -113,12 +130,19 @@ const Donation = () => {
               <option value="bankTransfer">Bank Transfer</option>
             </select>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-between">
             <button
               type="submit"
               className="px-4 py-2 font-bold text-white bg-brown rounded hover:bg-dark-brown focus:outline-none focus:shadow-outline"
             >
               Donate
+            </button>
+            <button
+              type="button"
+              className="px-4 py-2 font-bold text-white bg-red-500 rounded hover:bg-red-700 focus:outline-none focus:shadow-outline"
+              onClick={onClose}
+            >
+              Close
             </button>
           </div>
         </form>
