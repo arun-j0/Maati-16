@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'; // Assuming you are using react-router for navigation
 
-const Donation = ({ onClose }) => {
+const Donation = () => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [email, setEmail] = useState('');
   const [pan, setPan] = useState('');
   const [amount, setAmount] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +20,11 @@ const Donation = ({ onClose }) => {
     setPan('');
     setAmount('');
     setPaymentMethod('');
-    onClose();
+    history.push('/');
+  };
+
+  const handleClose = () => {
+    history.push('/');
   };
 
   return (
@@ -26,7 +32,7 @@ const Donation = ({ onClose }) => {
       <div className="relative w-full max-w-md p-8 bg-[#f2e5d2] rounded-md shadow-md">
         <button
           className="absolute text-gray-600 top-2 right-2 hover:text-gray-900"
-          onClick={onClose}
+          onClick={handleClose}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -135,8 +141,8 @@ const Donation = ({ onClose }) => {
             </button>
             <button
               type="button"
-              className="px-4 py-2 font-bold text-white bg-red-500 rounded hover:bg-red-700 focus:outline-none focus:shadow-outline"
-              onClick={onClose}
+              className="px-4 py-2 font-bold text-white bg-[#8b5a2b] rounded hover:bg-[#5d493e] focus:outline-none focus:shadow-outline"
+              onClick={handleClose}
             >
               Close
             </button>
