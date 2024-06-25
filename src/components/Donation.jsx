@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Donation = () => {
   const [name, setName] = useState('');
@@ -8,7 +8,7 @@ const Donation = () => {
   const [pan, setPan] = useState('');
   const [amount, setAmount] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,11 +20,11 @@ const Donation = () => {
     setPan('');
     setAmount('');
     setPaymentMethod('');
-    history.push('/');
+    navigate('/');
   };
 
   const handleClose = () => {
-    history.push('/');
+    navigate('/');
   };
 
   return (
