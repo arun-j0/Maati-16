@@ -157,5 +157,5 @@ const FAQs = ({ onClose }) => {
         </>
     );
 };
-
+ 
 export default FAQs;
