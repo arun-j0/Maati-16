@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-import Topbar from '../components/TopBar';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
 
