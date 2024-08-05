@@ -1,5 +1,6 @@
 import React from 'react';
-import {Tilt} from 'react-tilt';
+import { Tilt } from 'react-tilt';
+import { Link } from 'react-router-dom';
 
 const HowYouCanHelp = () => {
   return (
@@ -11,19 +12,19 @@ const HowYouCanHelp = () => {
           <Tilt className="flex flex-col items-center flex-1 p-6 bg-white rounded-lg shadow-md">
             <h3 className="mb-4 text-2xl md:text-4xl font-bold text-[#280101]">Donate</h3>
             <p className="mb-6 text-xl text-center text-black md:text-2xl">Your donation can make a big difference. Support our cause and help those in need.</p>
-            <a href="/donate" className="inline-block px-6 py-3 text-[#280101] transition duration-300 bg-[#fee57e] rounded-md hover:bg-yellow-600 text-lg md:text-2xl">Donate Now</a>
+            <Link to="/donation" className="inline-block px-6 py-3 text-[#280101] transition duration-300 bg-[#fee57e] rounded-md hover:bg-yellow-600 text-lg md:text-2xl">Donate Now</Link>
           </Tilt>
           {/* Volunteer */}
           <Tilt className="flex flex-col items-center flex-1 p-6 bg-white rounded-lg shadow-md">
             <h3 className="mb-4 text-2xl md:text-4xl font-bold text-[#280101]">Volunteer</h3>
             <p className="mb-6 text-xl text-center text-black md:text-2xl">Join us in our mission. Volunteer your time and skills to make a positive impact in our community.</p>
-            <a href="/volunteer" className="inline-block px-6 py-3 text-[#280101] transition duration-300 bg-[#fee57e] rounded-md hover:bg-yellow-600 text-lg md:text-2xl">Volunteer Now</a>
+            <Link to="/donation" className="inline-block px-6 py-3 text-[#280101] transition duration-300 bg-[#fee57e] rounded-md hover:bg-yellow-600 text-lg md:text-2xl">Volunteer Now</Link>
           </Tilt>
           {/* Get Involved */}
           <Tilt className="flex flex-col items-center flex-1 p-6 bg-white rounded-lg shadow-md">
             <h3 className="mb-4 text-2xl md:text-4xl font-bold text-[#280101]">Get Involved</h3>
             <p className="mb-6 text-xl text-center text-black md:text-2xl">There are many ways to get involved. Learn more about our initiatives and join our community.</p>
-            <a href="/get-involved" className="inline-block px-6 py-3 text-[#280101] transition duration-300 bg-[#fee57e] rounded-md hover:bg-yellow-600 text-lg md:text-2xl">Get Involved</a>
+            <Link to="/donation" className="inline-block px-6 py-3 text-[#280101] transition duration-300 bg-[#fee57e] rounded-md hover:bg-yellow-600 text-lg md:text-2xl">Get Involved</Link>
           </Tilt>
         </div>
       </div>
