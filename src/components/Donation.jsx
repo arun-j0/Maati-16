@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 const Donation = () => {
   const [name, setName] = useState('');
@@ -12,10 +14,24 @@ const Donation = () => {
   const [paymentMethod, setPaymentMethod] = useState('');
   const navigate = useNavigate();
 
+  const generateBill = () => {
+    const doc = new jsPDF();
+    doc.text('Donation Receipt', 14, 16);
+    doc.text(`Name: ${name}`, 14, 30);
+    doc.text(`Address: ${address}`, 14, 40);
+    doc.text(`Email: ${email}`, 14, 50);
+    doc.text(`PAN: ${pan}`, 14, 60);
+    doc.text(`Amount Donated: ₹${amount}`, 14, 70);
+    doc.text(`Payment Method: ${paymentMethod}`, 14, 80);
+    doc.text('Thank you for your donation!', 14, 100);
+    doc.save('DonationReceipt.pdf');
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ name, address, email, pan, amount, paymentMethod });
     toast.success('Thank you for your donation!');
+    generateBill();
     setName('');
     setAddress('');
     setEmail('');
