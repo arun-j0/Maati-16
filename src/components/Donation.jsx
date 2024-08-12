@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Donation = () => {
   const [name, setName] = useState('');
@@ -13,14 +15,14 @@ const Donation = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ name, address, email, pan, amount, paymentMethod });
-    alert('Thank you for your donation!');
+    toast.success('Thank you for your donation!');
     setName('');
     setAddress('');
     setEmail('');
     setPan('');
     setAmount('');
     setPaymentMethod('');
-    navigate('/');
+    setTimeout(() => navigate('/'), 2000); // Redirect after 2 seconds
   };
 
   const handleClose = () => {
@@ -148,6 +150,7 @@ const Donation = () => {
             </button>
           </div>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );
