@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 
-// Load Tawk.to script (assuming you are using Tawk.to for chatbot)
+// Load Tawk.to script
 const loadChatbotScript = () => {
   const script = document.createElement('script');
   script.async = true;
@@ -23,10 +23,11 @@ const Donation = () => {
   const [amount, setAmount] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
   const [donors, setDonors] = useState([]); // State to store donor information
+  const [showDonors, setShowDonors] = useState(false); // State to toggle donor view
   const navigate = useNavigate();
 
   useEffect(() => {
-    loadChatbotScript(); // Load chatbot script when component mounts
+    loadChatbotScript();
   }, []);
 
   const generateBill = () => {
@@ -54,7 +55,7 @@ const Donation = () => {
     setPan('');
     setAmount('');
     setPaymentMethod('');
-    setTimeout(() => navigate('/'), 2000); // Redirect after 2 seconds
+    setTimeout(() => navigate('/'), 2000);
   };
 
   const handleClose = () => {
@@ -62,26 +63,11 @@ const Donation = () => {
   };
 
   const openChatbot = () => {
-    // Assuming Tawk.to is used, this function will open the chat
     window.Tawk_API?.toggle();
   };
 
-  const displayDonors = () => {
-    if (donors.length === 0) {
-      toast.info('No donors to display.');
-    } else {
-      let donorInfo = 'Donor Information:\n\n';
-      donors.forEach((donor, index) => {
-        donorInfo += `Donor ${index + 1}:\n`;
-        donorInfo += `Name: ${donor.name}\n`;
-        donorInfo += `Address: ${donor.address}\n`;
-        donorInfo += `Email: ${donor.email}\n`;
-        donorInfo += `PAN: ${donor.pan}\n`;
-        donorInfo += `Amount Donated: ₹${donor.amount}\n`;
-        donorInfo += `Payment Method: ${donor.paymentMethod}\n\n`;
-      });
-      alert(donorInfo); // Display donor information
-    }
+  const toggleDonors = () => {
+    setShowDonors(!showDonors); // Toggle the donor visibility
   };
 
   return (
@@ -128,7 +114,6 @@ const Donation = () => {
           </p>
         </div>
         <form onSubmit={handleSubmit}>
-          {/* Donation form fields */}
           <div className="mb-4">
             <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="name">
               Name
@@ -214,25 +199,6 @@ const Donation = () => {
             </select>
           </div>
 
-          {/* Chatbot Button */}
-          <div className="flex justify-between mt-4">
-            <button
-              type="button"
-              className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
-              onClick={openChatbot}
-            >
-              Chat with Us
-            </button>
-            <button
-              type="button"
-              className="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700"
-              onClick={displayDonors}
-            >
-              Display Information
-            </button>
-          </div>
-
-          {/* Submit Button */}
           <div className="mt-4">
             <button
               type="submit"
@@ -242,6 +208,34 @@ const Donation = () => {
             </button>
           </div>
         </form>
+
+        {/* View Donors Button */}
+        <div className="mt-6">
+          <button
+            className="w-full px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700"
+            onClick={toggleDonors}
+          >
+            {showDonors ? 'Hide Donors' : 'View Donors'}
+          </button>
+        </div>
+
+        {/* Conditionally render donor list */}
+        {showDonors && (
+          <div className="mt-6">
+            <h3 className="mb-2 text-xl font-bold text-gray-700">List of Donors</h3>
+            {donors.length > 0 ? (
+              <ul className="list-disc pl-6">
+                {donors.map((donor, index) => (
+                  <li key={index} className="text-gray-600">
+                    {donor.name} - ₹{donor.amount} ({donor.paymentMethod})
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-600">No donors yet.</p>
+            )}
+          </div>
+        )}
       </div>
       <ToastContainer />
     </div>
