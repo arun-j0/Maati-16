@@ -22,6 +22,7 @@ const Donation = () => {
   const [pan, setPan] = useState('');
   const [amount, setAmount] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
+  const [donors, setDonors] = useState([]); // State to store donor information
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -43,7 +44,8 @@ const Donation = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ name, address, email, pan, amount, paymentMethod });
+    const newDonor = { name, address, email, pan, amount, paymentMethod };
+    setDonors([...donors, newDonor]); // Add new donor to the list
     toast.success('Thank you for your donation!');
     generateBill();
     setName('');
@@ -62,6 +64,24 @@ const Donation = () => {
   const openChatbot = () => {
     // Assuming Tawk.to is used, this function will open the chat
     window.Tawk_API?.toggle();
+  };
+
+  const displayDonors = () => {
+    if (donors.length === 0) {
+      toast.info('No donors to display.');
+    } else {
+      let donorInfo = 'Donor Information:\n\n';
+      donors.forEach((donor, index) => {
+        donorInfo += `Donor ${index + 1}:\n`;
+        donorInfo += `Name: ${donor.name}\n`;
+        donorInfo += `Address: ${donor.address}\n`;
+        donorInfo += `Email: ${donor.email}\n`;
+        donorInfo += `PAN: ${donor.pan}\n`;
+        donorInfo += `Amount Donated: ₹${donor.amount}\n`;
+        donorInfo += `Payment Method: ${donor.paymentMethod}\n\n`;
+      });
+      alert(donorInfo); // Display donor information
+    }
   };
 
   return (
@@ -195,34 +215,35 @@ const Donation = () => {
           </div>
 
           {/* Chatbot Button */}
-          <div className="mb-4">
+          <div className="flex justify-between mt-4">
             <button
               type="button"
-              className="px-4 py-2 font-bold text-white bg-[#8b5a2b] rounded hover:bg-[#5d493e] focus:outline-none focus:shadow-outline"
+              className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
               onClick={openChatbot}
             >
-              Chat with us
+              Chat with Us
+            </button>
+            <button
+              type="button"
+              className="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700"
+              onClick={displayDonors}
+            >
+              Display Information
             </button>
           </div>
 
-          <div className="flex items-center justify-between">
+          {/* Submit Button */}
+          <div className="mt-4">
             <button
               type="submit"
-              className="px-4 py-2 font-bold text-white bg-[#8b5a2b] rounded hover:bg-[#5d493e] focus:outline-none focus:shadow-outline"
+              className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
             >
               Donate
             </button>
-            <button
-              type="button"
-              className="px-4 py-2 font-bold text-white bg-[#8b5a2b] rounded hover:bg-[#5d493e] focus:outline-none focus:shadow-outline"
-              onClick={generateBill}
-            >
-              Generate Receipt
-            </button>
           </div>
         </form>
-        <ToastContainer />
       </div>
+      <ToastContainer />
     </div>
   );
 };
