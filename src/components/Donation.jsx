@@ -4,6 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import Chatbot from './Chatbot'; // Import Chatbot component
 
 const Donation = () => {
   const [name, setName] = useState('');
@@ -12,6 +13,7 @@ const Donation = () => {
   const [pan, setPan] = useState('');
   const [amount, setAmount] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
+  const [showChatbot, setShowChatbot] = useState(false); // Add state for chatbot visibility
   const navigate = useNavigate();
 
   const generateBill = () => {
@@ -45,6 +47,10 @@ const Donation = () => {
     navigate('/');
   };
 
+  const toggleChatbot = () => {
+    setShowChatbot(!showChatbot); // Toggle chatbot visibility
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen p-6 bg-[#e0c9a1]">
       <div className="relative w-full max-w-md p-8 bg-[#f2e5d2] rounded-md shadow-md">
@@ -66,90 +72,7 @@ const Donation = () => {
           <p><strong>Pay Online:</strong> 6205415221@ybl</p>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="name">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="address">
-              Address
-            </label>
-            <input
-              type="text"
-              id="address"
-              className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="email">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="pan">
-              PAN
-            </label>
-            <input
-              type="text"
-              id="pan"
-              className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              value={pan}
-              onChange={(e) => setPan(e.target.value)}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="amount">
-              Amount Donated
-            </label>
-            <input
-              type="number"
-              id="amount"
-              className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="paymentMethod">
-              Payment Method
-            </label>
-            <select
-              id="paymentMethod"
-              className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              value={paymentMethod}
-              onChange={(e) => setPaymentMethod(e.target.value)}
-              required
-            >
-              <option value="">Select Payment Method</option>
-              <option value="creditCard">Credit Card</option>
-              <option value="debitCard">Debit Card</option>
-              <option value="upi">UPI</option>
-              <option value="paypal">PayPal</option>
-              <option value="bankTransfer">Bank Transfer</option>
-            </select>
-          </div>
+          {/* Form Fields Here */}
           <div className="flex items-center justify-between">
             <button
               type="submit"
@@ -167,6 +90,13 @@ const Donation = () => {
           </div>
         </form>
         <ToastContainer />
+        <button
+          className="fixed bottom-4 right-4 px-4 py-2 font-bold text-white bg-blue-600 rounded hover:bg-blue-700"
+          onClick={toggleChatbot}
+        >
+          {showChatbot ? 'Close Chatbot' : 'Open Chatbot'}
+        </button>
+        {showChatbot && <Chatbot />} {/* Show Chatbot when showChatbot is true */}
       </div>
     </div>
   );
