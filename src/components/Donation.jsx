@@ -71,8 +71,10 @@ const Donation = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-[#e0c9a1]">
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-[#e0c9a1]">
+      {/* Donation Form Container */}
       <div className="relative w-full max-w-md p-8 bg-[#f2e5d2] rounded-md shadow-md">
+        {/* Close Button */}
         <button
           className="absolute text-gray-600 top-2 right-2 hover:text-gray-900"
           onClick={handleClose}
@@ -92,9 +94,13 @@ const Donation = () => {
             />
           </svg>
         </button>
+
+        {/* Heading */}
         <h2 className="mb-6 text-3xl font-handwriting text-center text-[#8b5a2b]">
           Donate to Bank of Baroda
         </h2>
+
+        {/* Bank Account Details */}
         <div className="mb-6 text-[#5d493e]">
           <h3 className="text-lg font-handwriting">Bank Account Details</h3>
           <p>
@@ -113,7 +119,10 @@ const Donation = () => {
             <strong>Pay Online:</strong> 6205415221@ybl
           </p>
         </div>
+
+        {/* Donation Form */}
         <form onSubmit={handleSubmit}>
+          {/* Name Field */}
           <div className="mb-4">
             <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="name">
               Name
@@ -127,6 +136,8 @@ const Donation = () => {
               required
             />
           </div>
+
+          {/* Address Field */}
           <div className="mb-4">
             <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="address">
               Address
@@ -140,6 +151,8 @@ const Donation = () => {
               required
             />
           </div>
+
+          {/* Email Field */}
           <div className="mb-4">
             <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="email">
               Email
@@ -153,6 +166,8 @@ const Donation = () => {
               required
             />
           </div>
+
+          {/* PAN Field */}
           <div className="mb-4">
             <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="pan">
               PAN
@@ -166,6 +181,8 @@ const Donation = () => {
               required
             />
           </div>
+
+          {/* Amount Field */}
           <div className="mb-4">
             <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="amount">
               Amount Donated
@@ -179,6 +196,8 @@ const Donation = () => {
               required
             />
           </div>
+
+          {/* Payment Method Field */}
           <div className="mb-4">
             <label className="block mb-2 text-sm font-bold text-[#5d493e]" htmlFor="paymentMethod">
               Payment Method
@@ -191,14 +210,15 @@ const Donation = () => {
               required
             >
               <option value="">Select Payment Method</option>
-              <option value="creditCard">Credit Card</option>
-              <option value="debitCard">Debit Card</option>
-              <option value="upi">UPI</option>
-              <option value="paypal">PayPal</option>
-              <option value="bankTransfer">Bank Transfer</option>
+              <option value="Credit Card">Credit Card</option>
+              <option value="Debit Card">Debit Card</option>
+              <option value="UPI">UPI</option>
+              <option value="PayPal">PayPal</option>
+              <option value="Bank Transfer">Bank Transfer</option>
             </select>
           </div>
 
+          {/* Donate Button */}
           <div className="mt-4">
             <button
               type="submit"
@@ -208,35 +228,37 @@ const Donation = () => {
             </button>
           </div>
         </form>
-
-        {/* View Donors Button */}
-        <div className="mt-6">
-          <button
-            className="w-full px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700"
-            onClick={toggleDonors}
-          >
-            {showDonors ? 'Hide Donors' : 'View Donors'}
-          </button>
-        </div>
-
-        {/* Conditionally render donor list */}
-        {showDonors && (
-          <div className="mt-6">
-            <h3 className="mb-2 text-xl font-bold text-gray-700">List of Donors</h3>
-            {donors.length > 0 ? (
-              <ul className="list-disc pl-6">
-                {donors.map((donor, index) => (
-                  <li key={index} className="text-gray-600">
-                    {donor.name} - ₹{donor.amount} ({donor.paymentMethod})
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-gray-600">No donors yet.</p>
-            )}
-          </div>
-        )}
       </div>
+
+      {/* View Donors Button Outside the Donation Form */}
+      <div className="mt-6 w-full max-w-md">
+        <button
+          className="w-full px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700"
+          onClick={toggleDonors}
+        >
+          {showDonors ? 'Hide Donors' : 'View Donors'}
+        </button>
+      </div>
+
+      {/* Conditionally Render Donor List */}
+      {showDonors && (
+        <div className="mt-6 w-full max-w-md p-4 bg-[#f2e5d2] rounded-md shadow-md">
+          <h3 className="mb-2 text-xl font-bold text-gray-700">List of Donors</h3>
+          {donors.length > 0 ? (
+            <ul className="list-disc pl-6">
+              {donors.map((donor, index) => (
+                <li key={index} className="text-gray-600">
+                  {donor.name} - ₹{donor.amount} ({donor.paymentMethod})
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-gray-600">No donors yet.</p>
+          )}
+        </div>
+      )}
+
+      {/* Toast Notifications */}
       <ToastContainer />
     </div>
   );
